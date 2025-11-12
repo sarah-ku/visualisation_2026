@@ -718,21 +718,20 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <p>Man kan nemt lave sin egne ‘fake’ data ved at simulere det fra en fordeling, der typisk er normalfordelingen, da den er den mest almindelige fordeling i den virkelige verden (husk den klassiske klokkeform). I R kan funktionen rnorm bruges til at simulere data. Først angiver man antallet af observationer, og derefter den gennemsnitlige værdi og standardafvigelsen (sd), som er de to nødvendige parametre for at beskrive en normalfordeling.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>) <span class="co">#standard normal distribution</span></span>
 <span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a>x <span class="co">#så har vi 25 værdier fra en normal distribution med mean=0 og standard deviation=1.</span></span></code></pre></div>
-<pre><code>##  [1] -0.770387129 -0.381886919  2.080149756  0.766505202  0.870646463
-##  [6] -1.338942731  0.802373440 -0.365675684  0.070911932  0.665964243
-## [11] -0.427331985  1.337114517 -0.439603490 -2.014384400 -1.164611881
-## [16] -0.851387887  0.662065812 -1.164926978  1.242101673  0.818442687
-## [21]  0.007505989 -1.016073834 -0.759654662 -0.094705255  0.549003169</code></pre>
+<pre><code>##  [1]  1.49025698  0.20995462 -0.20978906 -0.19346237  0.08421041  0.81736767
+##  [7] -0.98192804 -2.22451520  1.09540091 -0.07949892  0.19676281  1.83184297
+## [13]  0.44904694  2.17555771 -0.58342847 -1.62900241 -0.54209445 -0.85825422
+## [19]  0.56828260  0.51705251 -1.03229877 -0.09435901  0.55357384  1.30025149
+## [25] -0.19988341</code></pre>
 <p>I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigge kun på de første (eller sidste) værdier:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" tabindex="-1"></a><span class="fu">head</span>(x) <span class="co">#første 6</span></span>
-<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a><span class="do">## [1] -0.7703871 -0.3818869  2.0801498  0.7665052  0.8706465 -1.3389427</span></span>
+<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a><span class="do">## [1]  1.49025698  0.20995462 -0.20978906 -0.19346237  0.08421041  0.81736767</span></span>
 <span id="cb69-3"><a href="#cb69-3" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
-<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a><span class="do">## [1]  0.818442687  0.007505989 -1.016073834 -0.759654662 -0.094705255</span></span>
-<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a><span class="do">## [6]  0.549003169</span></span>
-<span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
-<span id="cb69-7"><a href="#cb69-7" tabindex="-1"></a><span class="do">## [1] -0.7703871</span></span>
-<span id="cb69-8"><a href="#cb69-8" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
-<span id="cb69-9"><a href="#cb69-9" tabindex="-1"></a><span class="do">## [1] 0.5490032</span></span></code></pre></div>
+<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a><span class="do">## [1]  0.51705251 -1.03229877 -0.09435901  0.55357384  1.30025149 -0.19988341</span></span>
+<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
+<span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a><span class="do">## [1] 1.490257</span></span>
+<span id="cb69-7"><a href="#cb69-7" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
+<span id="cb69-8"><a href="#cb69-8" tabindex="-1"></a><span class="do">## [1] -0.1998834</span></span></code></pre></div>
 <p>Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en 1-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.</p>
 </div>
 <div id="measures-of-central-tendency" class="section level3 hasAnchor" number="1.10.2">
@@ -783,11 +782,11 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <span id="cb70-5"><a href="#cb70-5" tabindex="-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb70-6"><a href="#cb70-6" tabindex="-1"></a>my_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
 <span id="cb70-7"><a href="#cb70-7" tabindex="-1"></a><span class="fu">c</span>(my_mean,my_median,my_max,my_min,my_var,my_sd) <span class="co">#print results</span></span></code></pre></div>
-<pre><code>## [1] -0.03667152 -0.09470525  2.08014976 -2.01438440  0.98448945  0.99221442</code></pre>
+<pre><code>## [1]  0.10644189  0.08421041  2.17555771 -2.22451520  1.07969339  1.03908296</code></pre>
 <p>Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -2.01438 -0.77039 -0.09471 -0.03667  0.76651  2.08015</code></pre>
+## -2.22452 -0.54209  0.08421  0.10644  0.56828  2.17556</code></pre>
 </div>
 <div id="tapply" class="section level3 hasAnchor" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> <code>tapply()</code><a href="#tapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
