@@ -1,20 +1,5 @@
 delete_merged_file: true
-output_dir: "docs"         # put built site into docs/
-output:
-  bookdown::gitbook:
-    css: assets/style.css
-    toc: true
-    toc_depth: 3
-    toc_float: true
-    number_sections: true
-    code_folding: show
+output_dir: "docs"
 language:
   ui:
-    chapter_name: "Kapitel "
-
-new_session: yes
-
-#split_by: chapter+number   # or  section+number / rmd
-#split_by: none          # one _main.html that holds EVERYTHING
-
-#before_chapter_script: "_common.R"
+    chapter_name: "Kapital "
