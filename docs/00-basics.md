@@ -1,7 +1,7 @@
 # Grundlæggende R {#baser}
 
 
-<img src="plots/logo_baseR.png" width="20%" height="20%" style="display: block; margin: auto;" />
+<img src="plots/logo_baseR.png" width="20%" height="20%" />
 
 
 “Det er ikke, fordi noget er svært, at vi ikke tør, det er, fordi vi ikke tør, at noget er svært” - Seneca
@@ -31,7 +31,7 @@ Følg venligst RStudios egne anvisninger til at få det installeret. Bemærk, at
 
 ### De forskellige vinduer i RStudio
 
-<div class="figure" style="text-align: center">
+<div class="figure">
 <img src="plots/RStudio_overview.png" alt="Image source: https://epirhandbook.com/en/r-basics.html" width="90%" height="90%" />
 <p class="caption">(\#fig:unnamed-chunk-2)Image source: https://epirhandbook.com/en/r-basics.html</p>
 </div>
@@ -87,6 +87,19 @@ Alle pakker på __CRAN__ er installeret på samme måde. Når du faktisk gerne v
 library(tidyverse)
 ```
 
+```
+## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.2.0     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+```
+
 Vi kommer til at arbejde med __tidyverse__ pakker fra kapitel tre (vi starter med __ggplot2__ og så nogle af de andre pakke fra __tidyverse__ fra kapitel fire), __så det er en god idé at har tidyverse installeret allerede nu__, når det nogle gange kan tage lidt tid til at installere eller opdatere de mange andre mulige pakker, der __tidyverse__ er afhængig af. 
 
 Vær opmærksom på, at der nogle gange opstår konflikter når det samme funktionnavn findes i flere pakker - for eksempel, funktionen `filter()` findes indenfor to forskellige pakker, nemlig `dplyr` og `stats`. Når du skriver `filter()` så ved R ikke, hvilke pakker du mener. I dette tilfælde kan du være gennemskueligt overfor den pakke, du gerne vil bruge ved at skrive `dplyr::filter()` eller `stats:filter()` i stedet for bare `filter()`. 
@@ -115,13 +128,13 @@ head(iris) #first few rows
 ```
 
 ```
-#>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-#> 1          5.1         3.5          1.4         0.2  setosa
-#> 2          4.9         3.0          1.4         0.2  setosa
-#> 3          4.7         3.2          1.3         0.2  setosa
-#> 4          4.6         3.1          1.5         0.2  setosa
-#> 5          5.0         3.6          1.4         0.2  setosa
-#> 6          5.4         3.9          1.7         0.4  setosa
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
 ```
 
 ``` r
@@ -129,13 +142,13 @@ tail(iris) #last few rows
 ```
 
 ```
-#>     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
-#> 145          6.7         3.3          5.7         2.5 virginica
-#> 146          6.7         3.0          5.2         2.3 virginica
-#> 147          6.3         2.5          5.0         1.9 virginica
-#> 148          6.5         3.0          5.2         2.0 virginica
-#> 149          6.2         3.4          5.4         2.3 virginica
-#> 150          5.9         3.0          5.1         1.8 virginica
+##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 145          6.7         3.3          5.7         2.5 virginica
+## 146          6.7         3.0          5.2         2.3 virginica
+## 147          6.3         2.5          5.0         1.9 virginica
+## 148          6.5         3.0          5.2         2.0 virginica
+## 149          6.2         3.4          5.4         2.3 virginica
+## 150          5.9         3.0          5.1         1.8 virginica
 ```
 
 ``` r
@@ -143,12 +156,12 @@ str(iris) #structure
 ```
 
 ```
-#> 'data.frame':	150 obs. of  5 variables:
-#>  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-#>  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-#>  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-#>  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-#>  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+## 'data.frame':	150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
 ``` r
@@ -156,20 +169,20 @@ summary(iris) #summary per column
 ```
 
 ```
-#>   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
-#>  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
-#>  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
-#>  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
-#>  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
-#>  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
-#>  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
-#>        Species  
-#>  setosa    :50  
-#>  versicolor:50  
-#>  virginica :50  
-#>                 
-#>                 
-#> 
+##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## 
 ```
 
 
@@ -249,7 +262,7 @@ b # 5 + 4
 ```
 
 ```
-#> [1] 9
+## [1] 9
 ```
 
 Vær opmærksom på, at jeg kan ændre på `a`, uden at `b` ændre sig automatisk:
@@ -261,7 +274,7 @@ b #stadig 5 + 4
 ```
 
 ```
-#> [1] 9
+## [1] 9
 ```
 
 Hvis man vil opdatere `b`, så skal den defineres igen:
@@ -273,7 +286,7 @@ b # 23 + 4
 ```
 
 ```
-#> [1] 27
+## [1] 27
 ```
 
 
@@ -288,7 +301,7 @@ a
 ```
 
 ```
-#> [1] 1 2 3 4 5
+## [1] 1 2 3 4 5
 ```
 
 <!-- Man kan også  -->
@@ -306,7 +319,7 @@ c
 ```
 
 ```
-#> [1] "cat"   "mouse" "horse" "sheep" "dog"
+## [1] "cat"   "mouse" "horse" "sheep" "dog"
 ```
 
 
@@ -317,9 +330,9 @@ Nar vi kommer til at arbejde med visualiseringer og data beardejdning er det vig
 
 ``` r
 is.numeric(c)
-#> [1] FALSE
+## [1] FALSE
 is.character(c)
-#> [1] TRUE
+## [1] TRUE
 ```
 
 Her er en list overfor nogle af de vigtigste datatyper:
@@ -340,9 +353,9 @@ En datatype, der bør få særlig opmærksomhed er `fct` (factor). I følgende v
 ``` r
 tea_coffee <- c("tea","tea","coffee","coffee","tea")
 is.factor(tea_coffee)
-#> [1] FALSE
+## [1] FALSE
 tea_coffee
-#> [1] "tea"    "tea"    "coffee" "coffee" "tea"
+## [1] "tea"    "tea"    "coffee" "coffee" "tea"
 ```
 
 Vi vil derfor gerne fortælle R, at `tea_coffee` er ikke bare nogle tilfældig tekst men at der er en struktur med, så vi bruger funktionen `as.factor` for at lave den om til datatypen `fct`.
@@ -351,10 +364,10 @@ Vi vil derfor gerne fortælle R, at `tea_coffee` er ikke bare nogle tilfældig t
 ``` r
 tea_coffee <- as.factor(tea_coffee)
 is.factor(tea_coffee)
-#> [1] TRUE
+## [1] TRUE
 tea_coffee
-#> [1] tea    tea    coffee coffee tea   
-#> Levels: coffee tea
+## [1] tea    tea    coffee coffee tea   
+## Levels: coffee tea
 ```
 
 Den 'ekstra' oplysninger man har ved at sige, at en variabel betragtes som factor bliver vigtigt når man arbejder med visualiseringer - for eksempel, hvis vi gerne vil lave et barplot hvor man gerne vil adskille søjlerne efter de to niveauer "tea" og "coffee" (visualiseringer er emnet fra kapitel 3). 
@@ -376,12 +389,12 @@ mydf
 ```
 
 ```
-#>   personID height age
-#> 1        1    140  34
-#> 2        2    187  31
-#> 3        3    154  25
-#> 4        4    132  43
-#> 5        5    165  29
+##   personID height age
+## 1        1    140  34
+## 2        2    187  31
+## 3        3    154  25
+## 4        4    132  43
+## 5        5    165  29
 ```
 
 Man kan fa adgang til variabler i en dataframe ved at bruge det dollar tegn `$`. For eksempel giver følgende variablen `personID` fra dataframen `mydf`:
@@ -392,7 +405,7 @@ mydf$personID
 ```
 
 ```
-#> [1] 1 2 3 4 5
+## [1] 1 2 3 4 5
 ```
 
 Husk, at vores dataframe, ligesom et matrix (i R: `matrix()`) har to dimensioner - række og kolonner Forskellen mellem en matrix og en dataramme er, at datarammer kan indeholde mange forskellige data typer (herunder numeriske, faktorer, karakterer osv.), men matrix indeholder kun numeriske data. For eksempel i tilfældet af ovenstående dataframen er alle variabler numeriske, men vi kan godt tilføje en variabel som er ikke-numeriske:
@@ -404,12 +417,12 @@ mydf
 ```
 
 ```
-#>   personID height age colour
-#> 1        1    140  34    red
-#> 2        2    187  31   blue
-#> 3        3    154  25  green
-#> 4        4    132  43 orange
-#> 5        5    165  29 purple
+##   personID height age colour
+## 1        1    140  34    red
+## 2        2    187  31   blue
+## 3        3    154  25  green
+## 4        4    132  43 orange
+## 5        5    165  29 purple
 ```
 
 Nu er `mydf` er en dataframe, der blander forskellige datatyper, men følgende er en matrix
@@ -422,10 +435,10 @@ matrix(c(1, 2, 3, 4, 5, 6),
 ```
 
 ```
-#>      [,1] [,2]
-#> [1,]    1    4
-#> [2,]    2    5
-#> [3,]    3    6
+##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
 ```
 
 og kan kun indeholde numeriske data, som kan bruges til at lave matematik operationer (matrix multiplikation osv.). I dette kursus beskæftiger os primært med dataframes (som bliver kaldt for tibbles i __tidyverse__).
@@ -442,7 +455,7 @@ a[1:2]
 ```
 
 ```
-#> [1] 1 2
+## [1] 1 2
 ```
 
 Bemærk, at mens vectorer har kun en dimension, __har dataframes to dimensioner__. Når man skal lave en delmægde af en dataframe, skal man derfor fortælle R, hvilke række og hvilke kolonner skal være med.
@@ -460,7 +473,7 @@ mydf[1:2, 2]  #first two rows (observations), second column (variable) only
 ```
 
 ```
-#> [1] 140 187
+## [1] 140 187
 ```
 
 Hvis vi vil beholde den første to observationer og samtlige variabler, kan den anden plads være tom:
@@ -471,9 +484,9 @@ mydf[1:2, ]  #first two rows, all columns
 ```
 
 ```
-#>   personID height age colour
-#> 1        1    140  34    red
-#> 2        2    187  31   blue
+##   personID height age colour
+## 1        1    140  34    red
+## 2        2    187  31   blue
 ```
 
 Jeg kan også angive et variabelnavn direkte:
@@ -484,7 +497,7 @@ mydf[1:2,"height"]
 ```
 
 ```
-#> [1] 140 187
+## [1] 140 187
 ```
 
 Man kan kigge på en subset af rækkerne i de data ved at 
@@ -495,9 +508,9 @@ mydf[mydf$height>=165,] #alle rækker i datarammen med height = 165 eller over
 ```
 
 ```
-#>   personID height age colour
-#> 2        2    187  31   blue
-#> 5        5    165  29 purple
+##   personID height age colour
+## 2        2    187  31   blue
+## 5        5    165  29 purple
 ```
 
 Her er en tabel af comparitiver, og jeg gengiver samme tabel når I kommer til at lave delmængde i __tidyverse__:
@@ -523,10 +536,10 @@ mydf[mydf$personID %in% c(1,3,5),] #alle personer med personID 1,3 eller 5
 ```
 
 ```
-#>   personID height age colour
-#> 1        1    140  34    red
-#> 3        3    154  25  green
-#> 5        5    165  29 purple
+##   personID height age colour
+## 1        1    140  34    red
+## 3        3    154  25  green
+## 5        5    165  29 purple
 ```
 
 Her er et eksempel på, hvordan man bruger udråbstegnet: personer med personID, der ikke er 1,3 eller 5:
@@ -537,9 +550,9 @@ mydf[!(mydf$personID %in% c(1,3,5)),] #alle personer med personID 2 eller 4
 ```
 
 ```
-#>   personID height age colour
-#> 2        2    187  31   blue
-#> 4        4    132  43 orange
+##   personID height age colour
+## 2        2    187  31   blue
+## 4        4    132  43 orange
 ```
 
 
@@ -556,7 +569,7 @@ if (number > 0) {
 ```
 
 ```
-#> [1] "Number is positive"
+## [1] "Number is positive"
 ```
 
 Hvis betingelse er sand udføres den handling indenfor `{ }`, dvs. "Number is positive" printes.
@@ -574,7 +587,7 @@ if (number > 0) {
 ```
 
 ```
-#> [1] "Number is not positive"
+## [1] "Number is not positive"
 ```
 
 Man kan også opnå samme resultat med at bruge `ifelse`:
@@ -589,7 +602,7 @@ ifelse(test = number %in% numbers_of_interest,
 ```
 
 ```
-#> [1] "Number is interesting"
+## [1] "Number is interesting"
 ```
 
 Man behøver ikke at skrive ordene "test", "yes" og "no" hver gang, såfremt at du bruger samme rækkefølgen som funktionen forventer:
@@ -602,7 +615,7 @@ ifelse(number %in% numbers_of_interest,
 ```
 
 ```
-#> [1] "Number is interesting"
+## [1] "Number is interesting"
 ```
 
 ## Loops
@@ -617,11 +630,11 @@ for (i in 1:5) {
 ```
 
 ```
-#> [1] 1
-#> [1] 2
-#> [1] 3
-#> [1] 4
-#> [1] 5
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
 ```
 
 Loops bliver et stort emne senere i kurset (emne 8/9).
@@ -642,11 +655,11 @@ x #så har vi 25 værdier fra en normal distribution med mean=0 og standard devi
 ```
 
 ```
-#>  [1] -0.1506928  1.7041666  0.5321134  0.4052171 -1.1931692  1.0756373
-#>  [7]  0.6813452 -1.3348712 -1.1868632 -0.6302717  0.6801755 -0.3585628
-#> [13]  0.5276769 -1.2920442  0.2653240  2.4198460  1.0256648 -0.6455794
-#> [19] -1.0211542 -0.9326437  0.7644418  1.2456315  0.3062675 -0.9465267
-#> [25]  0.0165866
+##  [1] -0.770387129 -0.381886919  2.080149756  0.766505202  0.870646463
+##  [6] -1.338942731  0.802373440 -0.365675684  0.070911932  0.665964243
+## [11] -0.427331985  1.337114517 -0.439603490 -2.014384400 -1.164611881
+## [16] -0.851387887  0.662065812 -1.164926978  1.242101673  0.818442687
+## [21]  0.007505989 -1.016073834 -0.759654662 -0.094705255  0.549003169
 ```
 
 I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigge kun på de første (eller sidste) værdier:
@@ -654,13 +667,14 @@ I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigg
 
 ``` r
 head(x) #første 6
-#> [1] -0.1506928  1.7041666  0.5321134  0.4052171 -1.1931692  1.0756373
+## [1] -0.7703871 -0.3818869  2.0801498  0.7665052  0.8706465 -1.3389427
 tail(x) #sidste 6
-#> [1] -0.9326437  0.7644418  1.2456315  0.3062675 -0.9465267  0.0165866
+## [1]  0.818442687  0.007505989 -1.016073834 -0.759654662 -0.094705255
+## [6]  0.549003169
 x[1] #første værdi
-#> [1] -0.1506928
+## [1] -0.7703871
 x[length(x)] #sidste data point
-#> [1] 0.0165866
+## [1] 0.5490032
 ```
 
 Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en 1-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.
@@ -690,7 +704,7 @@ c(my_mean,my_median,my_max,my_min,my_var,my_sd) #print results
 ```
 
 ```
-#> [1]  0.07830861  0.26532398  2.41984599 -1.33487117  1.03441481  1.01706185
+## [1] -0.03667152 -0.09470525  2.08014976 -2.01438440  0.98448945  0.99221442
 ```
 
 Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:
@@ -701,8 +715,8 @@ summary(x)
 ```
 
 ```
-#>     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-#> -1.33487 -0.93264  0.26532  0.07831  0.68135  2.41985
+##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## -2.01438 -0.77039 -0.09471 -0.03667  0.76651  2.08015
 ```
 
 ### `tapply()`
@@ -718,8 +732,8 @@ tapply(iris$Sepal.Length,iris$Species,mean) # ovenstående i kun en linje
 ```
 
 ```
-#>     setosa versicolor  virginica 
-#>      5.006      5.936      6.588
+##     setosa versicolor  virginica 
+##      5.006      5.936      6.588
 ```
 
 Her tager vi en vektor ved navn Sepal.Length, opdeler den efter Species og beregner gennemsnittet ved hjælp af funktionen mean for hver af de tre arter i variablen `Species` (setosa, versicolor og virginica). Alternativt kunne man have beregnet gennemsnittet for hver af de tre Species separat (en tilgang, der ikke skalerer godt!):
@@ -739,7 +753,7 @@ c(mean_setosa,mean_versi,mean_virgin)
 ```
 
 ```
-#> [1] 5.006 5.936 6.588
+## [1] 5.006 5.936 6.588
 ```
 
 Det er også værd at ved koncepten, fordi vi kommer til lære en lignende koncept i __tidyverse__ (med `group_by` og `summarise`).
@@ -781,7 +795,7 @@ cor(cars$speed, cars$dist)
 ```
 
 ```
-#> [1] 0.8068949
+## [1] 0.8068949
 ```
 
 Husk dog, at "Correlation does not equal causation" - dvs. at korrelation er bare en sammenhæng og ikke nødvendigvis angiver en årsagssammenhæng mellem de to variable.
@@ -794,17 +808,17 @@ cor.test(cars$speed, cars$dist)
 ```
 
 ```
-#> 
-#> 	Pearson's product-moment correlation
-#> 
-#> data:  cars$speed and cars$dist
-#> t = 9.464, df = 48, p-value = 1.49e-12
-#> alternative hypothesis: true correlation is not equal to 0
-#> 95 percent confidence interval:
-#>  0.6816422 0.8862036
-#> sample estimates:
-#>       cor 
-#> 0.8068949
+## 
+## 	Pearson's product-moment correlation
+## 
+## data:  cars$speed and cars$dist
+## t = 9.464, df = 48, p-value = 1.49e-12
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.6816422 0.8862036
+## sample estimates:
+##       cor 
+## 0.8068949
 ```
 
 Så kan man se, at p-værdien er 0, der er  under 0.05. Derfor konkluderer man, at der er en signifikant sammenhæng mellem de to variabler.
@@ -832,11 +846,11 @@ chisq.test(dat)
 ```
 
 ```
-#> 
-#> 	Pearson's Chi-squared test
-#> 
-#> data:  dat
-#> X-squared = 9.9516, df = 2, p-value = 0.006903
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  dat
+## X-squared = 9.9516, df = 2, p-value = 0.006903
 ```
 
 Her er p-værdien = 0.006903 < 0.05, så vi forkaster nulhypotesen og konkluderer, at der er en signifikant sammenhæng mellem de to variabler. Ud fra rådatasættet kan man også observere, at der er flere røde blomster uden nogen kopi af genet sammenlignet med røde blomster med to kopier af genet, mens det modsatte er tilfældet for de lyserøde blomster.
@@ -864,17 +878,17 @@ t.test(x,mu = 3)
 ```
 
 ```
-#> 
-#> 	One Sample t-test
-#> 
-#> data:  x
-#> t = -1.1448, df = 9, p-value = 0.2818
-#> alternative hypothesis: true mean is not equal to 3
-#> 95 percent confidence interval:
-#>  2.169968 3.272231
-#> sample estimates:
-#> mean of x 
-#>  2.721099
+## 
+## 	One Sample t-test
+## 
+## data:  x
+## t = -1.1448, df = 9, p-value = 0.2818
+## alternative hypothesis: true mean is not equal to 3
+## 95 percent confidence interval:
+##  2.169968 3.272231
+## sample estimates:
+## mean of x 
+##  2.721099
 ```
 
 Fra resultatet kan man se, at p-værdien er estimeret til 0.2818, og da den er > 0.05 kan vi ikke forkaste nulhypotesen, og vi konkluderer derfor, at middelværdien af x ikke adskiller sig signifikant fra 3.
@@ -899,17 +913,17 @@ t.test(x,y,var.equal = T)
 ```
 
 ```
-#> 
-#> 	Two Sample t-test
-#> 
-#> data:  x and y
-#> t = -5.4258, df = 18, p-value = 3.729e-05
-#> alternative hypothesis: true difference in means is not equal to 0
-#> 95 percent confidence interval:
-#>  -2.700858 -1.193081
-#> sample estimates:
-#> mean of x mean of y 
-#>  2.783056  4.730025
+## 
+## 	Two Sample t-test
+## 
+## data:  x and y
+## t = -5.4258, df = 18, p-value = 3.729e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -2.700858 -1.193081
+## sample estimates:
+## mean of x mean of y 
+##  2.783056  4.730025
 ```
 
 
@@ -924,17 +938,17 @@ t.test(x,y,var.equal = F) #var.equal=F er 'default' så man behøver ikke at spe
 ```
 
 ```
-#> 
-#> 	Welch Two Sample t-test
-#> 
-#> data:  x and y
-#> t = -2.0238, df = 11.77, p-value = 0.0663
-#> alternative hypothesis: true difference in means is not equal to 0
-#> 95 percent confidence interval:
-#>  -3.9077927  0.1483728
-#> sample estimates:
-#> mean of x mean of y 
-#>  2.757436  4.637146
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  x and y
+## t = -2.0238, df = 11.77, p-value = 0.0663
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -3.9077927  0.1483728
+## sample estimates:
+## mean of x mean of y 
+##  2.757436  4.637146
 ```
 
 Bemærk at hvis man kan antage at variancen er den samme, så har man mere **power** (kræft) til at kalde en virkelig forskel for signifikant.
@@ -953,17 +967,17 @@ t.test(before,after,paired=T) #specificy paired data
 ```
 
 ```
-#> 
-#> 	Paired t-test
-#> 
-#> data:  before and after
-#> t = -9.3296, df = 9, p-value = 6.356e-06
-#> alternative hypothesis: true mean difference is not equal to 0
-#> 95 percent confidence interval:
-#>  -5.415186 -3.301613
-#> sample estimates:
-#> mean difference 
-#>       -4.358399
+## 
+## 	Paired t-test
+## 
+## data:  before and after
+## t = -9.3296, df = 9, p-value = 6.356e-06
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##  -5.415186 -3.301613
+## sample estimates:
+## mean difference 
+##       -4.358399
 ```
 
 ``` r
@@ -971,17 +985,17 @@ t.test(before-after,mu=0) #exactly the same result
 ```
 
 ```
-#> 
-#> 	One Sample t-test
-#> 
-#> data:  before - after
-#> t = -9.3296, df = 9, p-value = 6.356e-06
-#> alternative hypothesis: true mean is not equal to 0
-#> 95 percent confidence interval:
-#>  -5.415186 -3.301613
-#> sample estimates:
-#> mean of x 
-#> -4.358399
+## 
+## 	One Sample t-test
+## 
+## data:  before - after
+## t = -9.3296, df = 9, p-value = 6.356e-06
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  -5.415186 -3.301613
+## sample estimates:
+## mean of x 
+## -4.358399
 ```
 
 ### ANOVA (variansanalyse)
@@ -1027,15 +1041,15 @@ anova(mylm_null,mylm)
 ```
 
 ```
-#> Analysis of Variance Table
-#> 
-#> Model 1: value ~ 1
-#> Model 2: value ~ group
-#>   Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
-#> 1    152 2215.4                                  
-#> 2    150 1509.9  2    705.55 35.047 3.245e-13 ***
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Analysis of Variance Table
+## 
+## Model 1: value ~ 1
+## Model 2: value ~ group
+##   Res.Df    RSS Df Sum of Sq      F    Pr(>F)    
+## 1    152 2215.4                                  
+## 2    150 1509.9  2    705.55 35.047 3.245e-13 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 P-værdien er  (<0.05), så nulhypotesen er forkastet til fordel af alternativhypotesen, altså modellen, hvor hver gruppe har sin egen middelværdi. Bemærk at det er til trods af, at to af de tre grupper kommer fra en normal fordeling med præcis de samme middelværdier (det er nok, at den trejde gruppe har en ænderledes middelværdi).
@@ -1052,7 +1066,7 @@ Formål: måler (en retningsbestemt) relation mellem to kontinuerte variabler. I
 
 Eksempel - datasættet `mtcars`, response (afgængig) variabel er `mpg` og predictor (uafhængig) variabel er `wt`. 
 
-<img src="00-basics_files/figure-html/unnamed-chunk-59-1.svg" width="672" style="display: block; margin: auto;" />
+<img src="00-basics_files/figure-html/unnamed-chunk-59-1.png" width="672" />
 
 Man skriver relationen i R som `mpg ~ wt` og benytter `lm()`(`lm(mpg~wt,data=mtcars)`): 
 
@@ -1063,13 +1077,13 @@ mylm
 ```
 
 ```
-#> 
-#> Call:
-#> lm(formula = mpg ~ wt, data = mtcars)
-#> 
-#> Coefficients:
-#> (Intercept)           wt  
-#>      37.285       -5.344
+## 
+## Call:
+## lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Coefficients:
+## (Intercept)           wt  
+##      37.285       -5.344
 ```
 
 Vores "Coefficients" beskriver den bedste rette linje: 
@@ -1094,24 +1108,24 @@ summary(mylm)
 ```
 
 ```
-#> 
-#> Call:
-#> lm(formula = mpg ~ wt, data = mtcars)
-#> 
-#> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -4.5432 -2.3647 -0.1252  1.4096  6.8727 
-#> 
-#> Coefficients:
-#>             Estimate Std. Error t value Pr(>|t|)    
-#> (Intercept)  37.2851     1.8776  19.858  < 2e-16 ***
-#> wt           -5.3445     0.5591  -9.559 1.29e-10 ***
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> Residual standard error: 3.046 on 30 degrees of freedom
-#> Multiple R-squared:  0.7528,	Adjusted R-squared:  0.7446 
-#> F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10
+## 
+## Call:
+## lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5432 -2.3647 -0.1252  1.4096  6.8727 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  37.2851     1.8776  19.858  < 2e-16 ***
+## wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.046 on 30 degrees of freedom
+## Multiple R-squared:  0.7528,	Adjusted R-squared:  0.7446 
+## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10
 ```
 
 Det fortæller os, at $R^2$ = 0.7528.
@@ -1130,7 +1144,7 @@ Koden `plot(mylm,which=c(1))` angiver residualer vs predikterede (fitted) værdi
 plot(mylm,which=c(1))
 ```
 
-<img src="00-basics_files/figure-html/unnamed-chunk-62-1.svg" width="672" style="display: block; margin: auto;" />
+<img src="00-basics_files/figure-html/unnamed-chunk-62-1.png" width="672" />
 
 Med koden `plot(mylm,which=c(2))` kan man tjekke antagelsen på en normal fordeling. Punkterne skal være nogenlunde tæt på den diagonale linje.
 
@@ -1139,7 +1153,7 @@ Med koden `plot(mylm,which=c(2))` kan man tjekke antagelsen på en normal fordel
 plot(mylm,which=c(2))
 ```
 
-<img src="00-basics_files/figure-html/unnamed-chunk-63-1.svg" width="672" style="display: block; margin: auto;" />
+<img src="00-basics_files/figure-html/unnamed-chunk-63-1.png" width="672" />
 
 ### Multiple lineær regression
 
@@ -1152,25 +1166,25 @@ summary(mylm_disp)
 ```
 
 ```
-#> 
-#> Call:
-#> lm(formula = mpg ~ wt + disp, data = mtcars)
-#> 
-#> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -3.4087 -2.3243 -0.7683  1.7721  6.3484 
-#> 
-#> Coefficients:
-#>             Estimate Std. Error t value Pr(>|t|)    
-#> (Intercept) 34.96055    2.16454  16.151 4.91e-16 ***
-#> wt          -3.35082    1.16413  -2.878  0.00743 ** 
-#> disp        -0.01773    0.00919  -1.929  0.06362 .  
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> Residual standard error: 2.917 on 29 degrees of freedom
-#> Multiple R-squared:  0.7809,	Adjusted R-squared:  0.7658 
-#> F-statistic: 51.69 on 2 and 29 DF,  p-value: 2.744e-10
+## 
+## Call:
+## lm(formula = mpg ~ wt + disp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.4087 -2.3243 -0.7683  1.7721  6.3484 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 34.96055    2.16454  16.151 4.91e-16 ***
+## wt          -3.35082    1.16413  -2.878  0.00743 ** 
+## disp        -0.01773    0.00919  -1.929  0.06362 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 2.917 on 29 degrees of freedom
+## Multiple R-squared:  0.7809,	Adjusted R-squared:  0.7658 
+## F-statistic: 51.69 on 2 and 29 DF,  p-value: 2.744e-10
 ```
 
 Her kan man se, at med tilføjelsen af variablen `disp`, er $R^2$ steget til 0.7809. Bemærk, at jo flere variabler man tilføjer til modellen, jo større bliver $R^2$-værdien. Den adjusted $R^2$ værdi er lavere fordi den prøver at tage højde for kompleksiteten af modellen (hvor mange parametre der er). 
@@ -1186,26 +1200,26 @@ summary(mylm_cyl)
 ```
 
 ```
-#> 
-#> Call:
-#> lm(formula = mpg ~ wt + factor(cyl), data = mtcars)
-#> 
-#> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -4.5890 -1.2357 -0.5159  1.3845  5.7915 
-#> 
-#> Coefficients:
-#>              Estimate Std. Error t value Pr(>|t|)    
-#> (Intercept)   33.9908     1.8878  18.006  < 2e-16 ***
-#> wt            -3.2056     0.7539  -4.252 0.000213 ***
-#> factor(cyl)6  -4.2556     1.3861  -3.070 0.004718 ** 
-#> factor(cyl)8  -6.0709     1.6523  -3.674 0.000999 ***
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> Residual standard error: 2.557 on 28 degrees of freedom
-#> Multiple R-squared:  0.8374,	Adjusted R-squared:   0.82 
-#> F-statistic: 48.08 on 3 and 28 DF,  p-value: 3.594e-11
+## 
+## Call:
+## lm(formula = mpg ~ wt + factor(cyl), data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5890 -1.2357 -0.5159  1.3845  5.7915 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   33.9908     1.8878  18.006  < 2e-16 ***
+## wt            -3.2056     0.7539  -4.252 0.000213 ***
+## factor(cyl)6  -4.2556     1.3861  -3.070 0.004718 ** 
+## factor(cyl)8  -6.0709     1.6523  -3.674 0.000999 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 2.557 on 28 degrees of freedom
+## Multiple R-squared:  0.8374,	Adjusted R-squared:   0.82 
+## F-statistic: 48.08 on 3 and 28 DF,  p-value: 3.594e-11
 ```
 
 <!-- Der er faktisk tre rette linjer her - en for hvert niveau af `cyl`, og de har samme hældning med forskellige skæringspunkter. -->
@@ -1222,15 +1236,15 @@ anova(mylm,mylm_cyl)
 ```
 
 ```
-#> Analysis of Variance Table
-#> 
-#> Model 1: mpg ~ wt
-#> Model 2: mpg ~ wt + factor(cyl)
-#>   Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
-#> 1     30 278.32                                
-#> 2     28 183.06  2    95.263 7.2856 0.002835 **
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Analysis of Variance Table
+## 
+## Model 1: mpg ~ wt
+## Model 2: mpg ~ wt + factor(cyl)
+##   Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+## 1     30 278.32                                
+## 2     28 183.06  2    95.263 7.2856 0.002835 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 Så kan man se, at `cyl` er signifikant.
@@ -1520,11 +1534,11 @@ mytable
 ```
 
 ```
-#>         Survival
-#> Class    Died Survived
-#>   First    80      136
-#>   Second   97       87
-#>   Third   372      119
+##         Survival
+## Class    Died Survived
+##   First    80      136
+##   Second   97       87
+##   Third   372      119
 ```
 
 Tabellen angiver antallet af passagerer ombord skibet 'Titanic', som sank den 15. april 1912 efter et sammenstød med et isbjerg 600 km sydøst for Halifax, Nova Scotia i Canada. Tabellen er opdelt i tre klasser (førsteklasse, andenklasse, tredjeklasse) og viser antallet af passagerer, som overlevede tragedien og antallet af passagerer, som døde.
@@ -1587,15 +1601,15 @@ anova(model_h0,model_h1)
 ```
 
 ```
-#> Analysis of Variance Table
-#> 
-#> Model 1: Sepal.Width ~ 1
-#> Model 2: Sepal.Width ~ Species
-#>   Res.Df    RSS Df Sum of Sq     F    Pr(>F)    
-#> 1    149 28.307                                 
-#> 2    147 16.962  2    11.345 49.16 < 2.2e-16 ***
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Analysis of Variance Table
+## 
+## Model 1: Sepal.Width ~ 1
+## Model 2: Sepal.Width ~ Species
+##   Res.Df    RSS Df Sum of Sq     F    Pr(>F)    
+## 1    149 28.307                                 
+## 2    147 16.962  2    11.345 49.16 < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
 
 ``` r
@@ -1604,7 +1618,7 @@ par(mfrow=c(1,2))
 plot(model_h1,which=c(1,2))
 ```
 
-<img src="00-basics_files/figure-html/unnamed-chunk-108-1.svg" width="672" style="display: block; margin: auto;" />
+<img src="00-basics_files/figure-html/unnamed-chunk-108-1.png" width="672" />
 
 Kig på outputtet:
 

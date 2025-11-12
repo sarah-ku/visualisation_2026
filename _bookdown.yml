@@ -15,6 +15,6 @@ language:
 new_session: yes
 
 #split_by: chapter+number   # or  section+number / rmd
-split_by: none          # one _main.html that holds EVERYTHING
+#split_by: none          # one _main.html that holds EVERYTHING
 
-before_chapter_script: "_common.R"
+#before_chapter_script: "_common.R"

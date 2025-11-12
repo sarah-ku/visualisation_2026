@@ -1,7 +1,7 @@
 
 # Introduktion til R Markdown {#rmarkdown}
 
-<img src="plots/hex-rmarkdown.png" width="20%" height="20%" style="display: block; margin: auto;" />
+<img src="plots/hex-rmarkdown.png" width="20%" height="20%" />
 
 “Du kan aldrig krydse havet, før du har modet til at miste synet af kysten.” – Christopher Columbus
 
@@ -188,7 +188,7 @@ x + 1
 ```
 
 ```
-#> [1] 2
+## [1] 2
 ```
 
 
