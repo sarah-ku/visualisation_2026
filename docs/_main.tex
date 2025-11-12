@@ -869,11 +869,11 @@ Man kan nemt lave sin egne `fake' data ved at simulere det fra en fordeling, der
 \end{Shaded}
 
 \begin{verbatim}
-##  [1] -0.06681417 -1.62646302  3.16026020  0.87472219  1.96887548 -0.08942904
-##  [7]  0.81092103 -0.45211958 -1.64084393  0.97310342 -1.03788568  1.93647937
-## [13] -2.46279882  0.50836587 -0.13023684 -1.11729712 -1.85210480 -0.10310101
-## [19] -0.75996586  0.50800347  1.30913986  1.44594552 -0.16371481  0.20209836
-## [25] -0.52743289
+##  [1] -0.01008064 -0.96392117 -1.18086395  0.76036192 -0.71295540  0.56840953
+##  [7]  0.10135511 -1.77545242  0.53341300  0.96748370 -1.36949011 -1.23136920
+## [13] -0.12160475  1.13190732 -0.64706235 -0.82792291 -0.32399834  0.08684198
+## [19]  0.78567657  0.73162877  1.72433048 -1.35341953  1.51672755 -1.13221323
+## [25]  0.49074867
 \end{verbatim}
 
 I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigge kun på de første (eller sidste) værdier:
@@ -881,13 +881,13 @@ I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigg
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{head}\NormalTok{(x) }\CommentTok{\#første 6}
-\DocumentationTok{\#\# [1] {-}0.06681417 {-}1.62646302  3.16026020  0.87472219  1.96887548 {-}0.08942904}
+\DocumentationTok{\#\# [1] {-}0.01008064 {-}0.96392117 {-}1.18086395  0.76036192 {-}0.71295540  0.56840953}
 \FunctionTok{tail}\NormalTok{(x) }\CommentTok{\#sidste 6}
-\DocumentationTok{\#\# [1]  0.5080035  1.3091399  1.4459455 {-}0.1637148  0.2020984 {-}0.5274329}
+\DocumentationTok{\#\# [1]  0.7316288  1.7243305 {-}1.3534195  1.5167275 {-}1.1322132  0.4907487}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\CommentTok{\#første værdi}
-\DocumentationTok{\#\# [1] {-}0.06681417}
+\DocumentationTok{\#\# [1] {-}0.01008064}
 \NormalTok{x[}\FunctionTok{length}\NormalTok{(x)] }\CommentTok{\#sidste data point}
-\DocumentationTok{\#\# [1] {-}0.5274329}
+\DocumentationTok{\#\# [1] 0.4907487}
 \end{Highlighting}
 \end{Shaded}
 
@@ -931,7 +931,7 @@ Lad os afprøve dem på vores simulerede data:
 \end{Shaded}
 
 \begin{verbatim}
-## [1]  0.06670829 -0.08942904  3.16026020 -2.46279882  1.77166726  1.33103992
+## [1] -0.09005878 -0.01008064  1.72433048 -1.77545242  0.98328307  0.99160631
 \end{verbatim}
 
 Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:
@@ -944,7 +944,7 @@ Man kan også lave et summary af dataen, som består af mange af de statistiker 
 
 \begin{verbatim}
 ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -2.46280 -0.75997 -0.08943  0.06671  0.87472  3.16026
+## -1.77545 -0.96392 -0.01008 -0.09006  0.73163  1.72433
 \end{verbatim}
 
 \subsection{\texorpdfstring{\texttt{tapply()}}{tapply()}}\label{tapply}
@@ -2224,7 +2224,7 @@ Man kan også lave sektioner:
 
 \begin{figure}
 \centering
-\pandocbounded{\includegraphics[keepaspectratio]{header_eksempel.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{plots/header_eksempel.png}}
 \caption{Caption for the picture.}
 \end{figure}
 

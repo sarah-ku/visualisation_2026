@@ -1,0 +1,69 @@
+\contentsline {chapter}{Lidt om kurset}{5}{chapter*.2}%
+\contentsline {section}{Outline}{5}{section*.3}%
+\contentsline {section}{Bedømmelse}{5}{section*.4}%
+\contentsline {section}{Bare lidt om underviserne}{5}{section*.5}%
+\contentsline {chapter}{\numberline {1}Grundlæggende R}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Inledning til kapitel}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}RStudio}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}De forskellige vinduer i RStudio}{8}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Working directory}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}R pakker}{10}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Hvor kommer vores data fra?}{11}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Indbyggede datasæt}{11}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Importering af data fra .txt fil}{13}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Importering af data fra Excel}{13}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Kaggle}{14}{subsection.1.5.4}%
+\contentsline {section}{\numberline {1.6}Beregninger i R}{14}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Objektor}{14}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Vectorer}{15}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}datatyper}{15}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}Dataframes}{17}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Delmængder af dataframes}{18}{subsection.1.7.1}%
+\contentsline {section}{\numberline {1.8}If/else}{20}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Loops}{21}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Descriptive statistics}{22}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Simulere data fra den normale fordeling}{22}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}Measures of central tendency}{22}{subsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.10.3}\texttt {tapply()}}{23}{subsection.1.10.3}%
+\contentsline {section}{\numberline {1.11}Statistike tester}{24}{section.1.11}%
+\contentsline {subsection}{\numberline {1.11.1}P-værdien}{25}{subsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11.2}Korrelation}{25}{subsection.1.11.2}%
+\contentsline {subsection}{\numberline {1.11.3}Test for uafhængighed (chi-sq test)}{26}{subsection.1.11.3}%
+\contentsline {subsection}{\numberline {1.11.4}1 sample t-test}{27}{subsection.1.11.4}%
+\contentsline {subsection}{\numberline {1.11.5}2-sample t-test}{28}{subsection.1.11.5}%
+\contentsline {subsection}{\numberline {1.11.6}Paired t-test}{29}{subsection.1.11.6}%
+\contentsline {subsection}{\numberline {1.11.7}ANOVA (variansanalyse)}{30}{subsection.1.11.7}%
+\contentsline {subsection}{\numberline {1.11.8}Lineær regression}{31}{subsection.1.11.8}%
+\contentsline {subsection}{\numberline {1.11.9}R-squared coefficient of determination}{33}{subsection.1.11.9}%
+\contentsline {subsection}{\numberline {1.11.10}Antagelser - lineær regression}{34}{subsection.1.11.10}%
+\contentsline {subsection}{\numberline {1.11.11}Multiple lineær regression}{35}{subsection.1.11.11}%
+\contentsline {section}{\numberline {1.12}Problemstillinger}{37}{section.1.12}%
+\contentsline {subsection}{\numberline {1.12.1}Quiz - Basics}{37}{subsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.12.2}Grundlæggende R}{38}{subsection.1.12.2}%
+\contentsline {subsection}{\numberline {1.12.3}Kort analyse med reaktionstider}{40}{subsection.1.12.3}%
+\contentsline {subsection}{\numberline {1.12.4}Øvelse med CO2}{42}{subsection.1.12.4}%
+\contentsline {subsection}{\numberline {1.12.5}Ekstra øvelser med statistik tests}{42}{subsection.1.12.5}%
+\contentsline {chapter}{\numberline {2}Introduktion til R Markdown}{47}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Inledning til kapital}{47}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Hvad er R Markdown?}{48}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Installere R Markdown}{48}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Videodemonstrationer}{48}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Video 1}{48}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Video 2}{49}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Oprette et nyt dokument i R Markdown}{49}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}YAML}{51}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Globale options}{51}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Skrive baseret tekst}{52}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Headers}{52}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}liste}{52}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Knitte kode}{53}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Kode chunks}{53}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Et godt råd når man arbejder med chunks}{54}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Chunk indstillinger}{54}{subsection.2.8.2}%
+\contentsline {section}{\numberline {2.9}R beregninger inden for teksten i dokumentet (`inline code')}{55}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Working directory}{56}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Matematik}{56}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Ofte set fejl}{57}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Problemstillinger}{57}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Færdig for i dag og næste gang}{59}{section.2.14}%
+\contentsline {section}{\numberline {2.15}Ekstra links}{59}{section.2.15}%
