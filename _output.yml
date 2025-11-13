@@ -1,11 +1,11 @@
 # _output.yml
 bookdown::gitbook:
   css: assets/style.css
-  split_by: "none"
+  #split_by: "none"
   config:
     toc:
       before: |
         <li><a href="./">Visualisering_2026</a></li>
       after: |
-        <li><a href="https://sarah-ku.github.io/Visualisering_2025" target="blank">Published with bookdown</a></li>
+        <li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
     download: false

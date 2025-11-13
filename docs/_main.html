@@ -23,7 +23,7 @@
 <meta name="author" content="Sarah Rennie" />
 
 
-<meta name="date" content="2025-11-12" />
+<meta name="date" content="2025-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -240,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.15" data-path=""><a href="#ekstra-links"><i class="fa fa-check"></i><b>2.15</b> Ekstra links</a></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://sarah-ku.github.io/Visualisering_2025" target="blank">Published with bookdown</a></li>
+<li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
 
 </ul>
 
@@ -262,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Analyse og visualisering af biologiske datasæt – 2025</h1>
 <p class="author"><em>Sarah Rennie</em></p>
-<p class="date"><em>2025-11-12</em></p>
+<p class="date"><em>2025-11-13</em></p>
 </div>
 <div id="lidt-om-kurset" class="section level1 unnumbered hasAnchor">
 <h1>Lidt om kurset<a href="#lidt-om-kurset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -346,13 +346,13 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>Alle pakker på <strong>CRAN</strong> er installeret på samme måde. Når du faktisk gerne vil bruge en R pakke, skal du først indlæse den ved at bruge <code>library()</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching core tidyverse packages ──────────────── tidyverse 2.0.0 ──
+<pre><code>## ── Attaching core tidyverse packages ─────────────────────────────────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ## ✔ forcats   1.0.1     ✔ stringr   1.6.0
 ## ✔ ggplot2   4.0.0     ✔ tibble    3.3.0
 ## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
 ## ✔ purrr     1.2.0     
-## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ───────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
@@ -718,20 +718,21 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <p>Man kan nemt lave sin egne ‘fake’ data ved at simulere det fra en fordeling, der typisk er normalfordelingen, da den er den mest almindelige fordeling i den virkelige verden (husk den klassiske klokkeform). I R kan funktionen rnorm bruges til at simulere data. Først angiver man antallet af observationer, og derefter den gennemsnitlige værdi og standardafvigelsen (sd), som er de to nødvendige parametre for at beskrive en normalfordeling.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>) <span class="co">#standard normal distribution</span></span>
 <span id="cb67-2"><a href="#cb67-2" tabindex="-1"></a>x <span class="co">#så har vi 25 værdier fra en normal distribution med mean=0 og standard deviation=1.</span></span></code></pre></div>
-<pre><code>##  [1]  1.02554943  0.49659122 -0.71512014  0.05182197 -0.35623462  1.90972260
-##  [7]  0.14791004 -0.48769622  0.87887033  0.20425576  0.34214975 -1.86140675
-## [13]  0.82245941 -1.81433499  2.20235611 -0.14079369  0.42877932  0.23384902
-## [19]  0.17073577 -0.58008563 -0.92451248  0.40829794  0.09042545  0.26333549
-## [25]  0.59139676</code></pre>
+<pre><code>##  [1] -0.107924775 -0.133103319 -0.719523491 -0.252286856  0.002185536
+##  [6]  1.708155766  0.890531669  0.052744995  0.778772499 -1.037396953
+## [11] -0.912770855 -0.261956798 -0.441505712  0.945536601  1.190652032
+## [16]  0.090631855 -0.744339465 -0.887942235  1.011092725  1.148189018
+## [21]  1.785345462  0.639863414  1.319799699  0.656840811 -1.321616090</code></pre>
 <p>I stedet for at kigge på alle værdier på én gang, vil vi måske hellere kigge kun på de første (eller sidste) værdier:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" tabindex="-1"></a><span class="fu">head</span>(x) <span class="co">#første 6</span></span>
-<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a><span class="do">## [1]  1.02554943  0.49659122 -0.71512014  0.05182197 -0.35623462  1.90972260</span></span>
-<span id="cb69-3"><a href="#cb69-3" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
-<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a><span class="do">## [1] -0.58008563 -0.92451248  0.40829794  0.09042545  0.26333549  0.59139676</span></span>
-<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
-<span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a><span class="do">## [1] 1.025549</span></span>
-<span id="cb69-7"><a href="#cb69-7" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
-<span id="cb69-8"><a href="#cb69-8" tabindex="-1"></a><span class="do">## [1] 0.5913968</span></span></code></pre></div>
+<span id="cb69-2"><a href="#cb69-2" tabindex="-1"></a><span class="do">## [1] -0.107924775 -0.133103319 -0.719523491 -0.252286856  0.002185536</span></span>
+<span id="cb69-3"><a href="#cb69-3" tabindex="-1"></a><span class="do">## [6]  1.708155766</span></span>
+<span id="cb69-4"><a href="#cb69-4" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
+<span id="cb69-5"><a href="#cb69-5" tabindex="-1"></a><span class="do">## [1]  1.1481890  1.7853455  0.6398634  1.3197997  0.6568408 -1.3216161</span></span>
+<span id="cb69-6"><a href="#cb69-6" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
+<span id="cb69-7"><a href="#cb69-7" tabindex="-1"></a><span class="do">## [1] -0.1079248</span></span>
+<span id="cb69-8"><a href="#cb69-8" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
+<span id="cb69-9"><a href="#cb69-9" tabindex="-1"></a><span class="do">## [1] -1.321616</span></span></code></pre></div>
 <p>Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en 1-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.</p>
 </div>
 <div id="measures-of-central-tendency" class="section level3 hasAnchor" number="1.10.2">
@@ -782,11 +783,11 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <span id="cb70-5"><a href="#cb70-5" tabindex="-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb70-6"><a href="#cb70-6" tabindex="-1"></a>my_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
 <span id="cb70-7"><a href="#cb70-7" tabindex="-1"></a><span class="fu">c</span>(my_mean,my_median,my_max,my_min,my_var,my_sd) <span class="co">#print results</span></span></code></pre></div>
-<pre><code>## [1]  0.1355329  0.2042558  2.2023561 -1.8614067  0.8614270  0.9281309</code></pre>
+<pre><code>## [1]  0.2159990  0.0527450  1.7853455 -1.3216161  0.8107185  0.9003991</code></pre>
 <p>Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## -1.8614 -0.3562  0.2043  0.1355  0.4966  2.2024</code></pre>
+<pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+## -1.32162 -0.44151  0.05275  0.21600  0.94554  1.78535</code></pre>
 </div>
 <div id="tapply" class="section level3 hasAnchor" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> <code>tapply()</code><a href="#tapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
