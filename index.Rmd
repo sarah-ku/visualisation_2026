@@ -1,11 +1,11 @@
 ---
-title:       "Analyse og visualisering af biologiske datasæt – 2025"
+title:       "Analyse og visualisering af biologiske datasæt – 2026"
 author:      "Sarah Rennie"
 date:        "`r Sys.Date()`"
 site:        bookdown::bookdown_site
 documentclass: book
 link-citations: yes
-description: "Course materials for Analyse og visualisering af biologiske datasæt 2025"
+description: "Course materials for Analyse og visualisering af biologiske datasæt 2026"
 cover-image: plots/ai_cover.jpeg
 always_allow_html: true
 graphics:     yes
@@ -30,7 +30,7 @@ knitr::write_bib(c(
 
 # Lidt om kurset {-}
 
-Denne hjemmeside er kursusnotaterne til de indskrevne studerende i 2024. De er skrevet 100% af mig (din underviser og kursusansvarlig, Sarah Rennie). Jeg håber, det er intuitivt at finde rundt på siden, men har du forslag til forbedringer, skriv meget gerne til mig.
+Denne hjemmeside er kursusnotaterne til de indskrevne studerende i 2025/26 studieår. De er skrevet 100% af underviserne i kurset. Jeg håber, det er intuitivt at finde rundt på siden, men har du forslag til forbedringer, skriv meget gerne til mig.
 
 ## Outline {-}
 
