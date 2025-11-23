@@ -23,7 +23,7 @@
 <meta name="author" content="Sarah Rennie" />
 
 
-<meta name="date" content="2025-11-20" />
+<meta name="date" content="2025-11-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -269,6 +269,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="visual1.html"><a href="visual1.html#troubleshooting"><i class="fa fa-check"></i><b>3.9</b> Troubleshooting</a></li>
 <li class="chapter" data-level="3.10" data-path="visual1.html"><a href="visual1.html#problemstillinger-2"><i class="fa fa-check"></i><b>3.10</b> Problemstillinger</a></li>
 <li class="chapter" data-level="3.11" data-path="visual1.html"><a href="visual1.html#n%C3%A6ste-gang"><i class="fa fa-check"></i><b>3.11</b> Næste gang</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visual2.html"><a href="visual2.html"><i class="fa fa-check"></i><b>4</b> Visualisering - ggplot2 dag 2</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visual2.html"><a href="visual2.html#l%C3%A6ringsm%C3%A5l-og-videoer"><i class="fa fa-check"></i><b>4.1</b> Læringsmål og videoer</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="visual2.html"><a href="visual2.html#video-ressourcer-1"><i class="fa fa-check"></i><b>4.1.1</b> Video ressourcer</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="visual2.html"><a href="visual2.html#koordinat-systemer"><i class="fa fa-check"></i><b>4.2</b> Koordinat systemer</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="visual2.html"><a href="visual2.html#zoom-coord_cartesian-expand_limits"><i class="fa fa-check"></i><b>4.2.1</b> Zoom (<code>coord_cartesian()</code>, <code>expand_limits()</code>)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visual2.html"><a href="visual2.html#transformering-af-akserne---log-sqrt-osv-scale_x_continuous."><i class="fa fa-check"></i><b>4.2.2</b> Transformering af akserne - log, sqrt osv (<code>scale_x_continuous</code>).</a></li>
+<li class="chapter" data-level="4.2.3" data-path="visual2.html"><a href="visual2.html#flip-coordinates-coord_flip"><i class="fa fa-check"></i><b>4.2.3</b> Flip coordinates (<code>coord_flip</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="visual2.html"><a href="visual2.html#mere-om-farver-og-punkt-former"><i class="fa fa-check"></i><b>4.3</b> Mere om farver og punkt former</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="visual2.html"><a href="visual2.html#automatisk-farver"><i class="fa fa-check"></i><b>4.3.1</b> Automatisk farver</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visual2.html"><a href="visual2.html#manuelle-farver"><i class="fa fa-check"></i><b>4.3.2</b> Manuelle farver</a></li>
+<li class="chapter" data-level="4.3.3" data-path="visual2.html"><a href="visual2.html#punkt-former"><i class="fa fa-check"></i><b>4.3.3</b> Punkt former</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="visual2.html"><a href="visual2.html#annotations-geom_text"><i class="fa fa-check"></i><b>4.4</b> Annotations (<code>geom_text</code>)</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="visual2.html"><a href="visual2.html#tilf%C3%B8jelse-af-etiketter-direkte-p%C3%A5-plottet."><i class="fa fa-check"></i><b>4.4.1</b> Tilføjelse af etiketter direkte på plottet.</a></li>
+<li class="chapter" data-level="4.4.2" data-path="visual2.html"><a href="visual2.html#pakken-ggrepel-for-at-tilf%C3%B8je-tekst-labeller"><i class="fa fa-check"></i><b>4.4.2</b> Pakken <code>ggrepel</code> for at tilføje tekst labeller</a></li>
+<li class="chapter" data-level="4.4.3" data-path="visual2.html"><a href="visual2.html#tilf%C3%B8jelse-af-rektangler-i-regioner-af-interesse-annotate"><i class="fa fa-check"></i><b>4.4.3</b> Tilføjelse af rektangler i regioner af interesse (<code>annotate</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="visual2.html"><a href="visual2.html#adskille-plots-med-facets-facet_gridfacet_wrap"><i class="fa fa-check"></i><b>4.5</b> Adskille plots med facets (<code>facet_grid</code>/<code>facet_wrap</code>)</a></li>
+<li class="chapter" data-level="4.6" data-path="visual2.html"><a href="visual2.html#gemme-dit-plot"><i class="fa fa-check"></i><b>4.6</b> Gemme dit plot</a></li>
+<li class="chapter" data-level="4.7" data-path="visual2.html"><a href="visual2.html#problemstillinger-3"><i class="fa fa-check"></i><b>4.7</b> Problemstillinger</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
@@ -723,20 +751,20 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <p>Man kan nemt lave sin egne ‘fake’ data ved at simulere det fra en fordeling, der typisk er normalfordelingen, da den er den mest almindelige fordeling i den virkelige verden (husk den klassiske klokkeform). I R kan man anvender funktionen <code>rnorm</code> til at simulere data. Først angiver man antallet af observationer, og derefter den gennemsnitlige værdi og standardafvigelsen (sd), som er de to nødvendige parametre for at beskrive en normalfordeling.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="baser.html#cb67-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="co">#standard normalfordeling</span></span>
 <span id="cb67-2"><a href="baser.html#cb67-2" tabindex="-1"></a>x <span class="co">#så har vi 25 værdier fra en normal distribution med mean = 0 og standard deviation = 1</span></span></code></pre></div>
-<pre><code>##  [1]  1.10402610  0.05813381  0.66067984  1.74811589  0.09308247  1.21526628
-##  [7]  0.39088830  0.55103135  0.04520358 -0.66343378 -0.86872248  1.33274114
-## [13] -0.55612104  0.46670432 -1.37881176 -0.95285020 -0.60406244  0.07458841
-## [19]  0.31195995 -0.84719420  1.45099948  0.48350834  0.11405780 -1.29548502
-## [25] -1.25991174</code></pre>
+<pre><code>##  [1]  0.08255973 -0.17648693 -0.48825580  0.37727904  0.54353007  2.31178280
+##  [7]  0.90176930 -0.28784228  0.59445532  0.21444013 -1.92074372  2.54946636
+## [13]  0.25824136 -0.38266423 -1.70068408 -1.82743391  0.03213339  2.21986654
+## [19] -0.99692522 -0.87891412  0.47476110 -0.92387810 -3.18968974  0.94590951
+## [25] -0.64179117</code></pre>
 <p>I stedet for at kigge på alle værdier på én gang, vil vi måske kun kigge på de første (eller sidste) værdier:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="baser.html#cb69-1" tabindex="-1"></a><span class="fu">head</span>(x) <span class="co">#første 6</span></span>
-<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1] 1.10402610 0.05813381 0.66067984 1.74811589 0.09308247 1.21526628</span></span>
+<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1]  0.08255973 -0.17648693 -0.48825580  0.37727904  0.54353007  2.31178280</span></span>
 <span id="cb69-3"><a href="baser.html#cb69-3" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
-<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="do">## [1] -0.8471942  1.4509995  0.4835083  0.1140578 -1.2954850 -1.2599117</span></span>
+<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="do">## [1] -0.8789141  0.4747611 -0.9238781 -3.1896897  0.9459095 -0.6417912</span></span>
 <span id="cb69-5"><a href="baser.html#cb69-5" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
-<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a><span class="do">## [1] 1.104026</span></span>
+<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a><span class="do">## [1] 0.08255973</span></span>
 <span id="cb69-7"><a href="baser.html#cb69-7" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
-<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a><span class="do">## [1] -1.259912</span></span></code></pre></div>
+<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a><span class="do">## [1] -0.6417912</span></span></code></pre></div>
 <p>Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en ‘1’-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.</p>
 </div>
 <div id="measures-of-central-tendency" class="section level3 hasAnchor" number="1.10.2">
@@ -787,11 +815,11 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <span id="cb70-5"><a href="baser.html#cb70-5" tabindex="-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb70-6"><a href="baser.html#cb70-6" tabindex="-1"></a>my_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
 <span id="cb70-7"><a href="baser.html#cb70-7" tabindex="-1"></a><span class="fu">c</span>(my_mean,my_median,my_max,my_min,my_var,my_sd) <span class="co">#print results</span></span></code></pre></div>
-<pre><code>## [1]  0.06697578  0.09308247  1.74811589 -1.37881176  0.81904318  0.90501004</code></pre>
+<pre><code>## [1] -0.07636459  0.03213339  2.54946636 -3.18968974  1.79570718  1.34003999</code></pre>
 <p>Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="baser.html#cb72-1" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
 <pre><code>##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-## -1.37881 -0.66343  0.09308  0.06698  0.55103  1.74812</code></pre>
+## -3.18969 -0.87891  0.03213 -0.07636  0.54353  2.54947</code></pre>
 </div>
 <div id="tapply" class="section level3 hasAnchor" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> <code>tapply()</code><a href="baser.html#tapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
