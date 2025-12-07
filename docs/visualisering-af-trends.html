@@ -416,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.3" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#geom_smooth-flere-lm-trendlinjer-p%C3%A5-samme-plot"><i class="fa fa-check"></i><b>8.3.3</b> <code>geom_smooth()</code>: flere <code>lm</code> trendlinjer på samme plot</a></li>
 <li class="chapter" data-level="8.3.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#trendlinjer-med-methodloess"><i class="fa fa-check"></i><b>8.3.4</b> Trendlinjer med <code>method=="loess"</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#plot-linear-regresion-estimates"><i class="fa fa-check"></i><b>8.4</b> Plot linear regresion estimates</a>
+<li class="chapter" data-level="8.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#plot-linear-regression-estimates"><i class="fa fa-check"></i><b>8.4</b> Plot linear regression estimates</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#anvendelse-af-lm-over-nestede-datas%C3%A6t"><i class="fa fa-check"></i><b>8.4.1</b> Anvendelse af <code>lm()</code> over nestede datasæt</a></li>
 <li class="chapter" data-level="8.4.2" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#funktionen-glue-til-at-tilf%C3%B8je-etiketter"><i class="fa fa-check"></i><b>8.4.2</b> Funktionen <code>glue()</code> til at tilføje etiketter</a></li>
@@ -425,8 +425,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.5.1" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#anova-til-at-sammenligne-de-forskellige-modeller"><i class="fa fa-check"></i><b>8.5.1</b> <code>anova</code> til at sammenligne de forskellige modeller</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#problemstillinger-7"><i class="fa fa-check"></i><b>8.6</b> Problemstillinger</a></li>
-<li class="chapter" data-level="8.7" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#ekstra"><i class="fa fa-check"></i><b>8.7</b> Ekstra</a></li>
+<li class="chapter" data-level="8.6" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#resource"><i class="fa fa-check"></i><b>8.6</b> Resource</a></li>
+<li class="chapter" data-level="8.7" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#problemstillinger-7"><i class="fa fa-check"></i><b>8.7</b> Problemstillinger</a></li>
+<li class="chapter" data-level="8.8" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#ekstra"><i class="fa fa-check"></i><b>8.8</b> Ekstra</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
@@ -499,7 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Video 2: Lineær regression linjer med ggplot2
 <ul>
 <li>Jeg viser hvordan man tilføjer regression linjer på et plot</li>
-<li>Jeg sammenligne linjen med resultatet fra <code>lm()</code></li>
+<li>Jeg sammenligner linjen med resultatet fra <code>lm()</code></li>
 </ul></li>
 </ul>
 <div class="vembedr">
@@ -511,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Video 3: Lineær regression med <code>nest()</code> og <code>map()</code>
 <ul>
-<li>Den proces igen fra Video 1 men anvendte på lineær regression</li>
+<li>Den process igen fra Video 1 men anvendte på lineær regression</li>
 </ul></li>
 </ul>
 <div class="vembedr">
@@ -632,7 +633,7 @@ FALSE 1   -0.147     -15.7 8.25e-55     11118   -0.165    -0.129 Pearson&#39;…
 <span id="cb514-2"><a href="visualisering-af-trends.html#cb514-2" tabindex="-1"></a>                      .x <span class="sc">%&gt;%</span> <span class="fu">pull</span>(log10_size_mb))</span></code></pre></div>
 <p>Vi vil gerne få statistikkerne fra <code>cor.test()</code> i en pæn form, så vi tilføjer <code>glance()</code> til den ovenstående funktion:</p>
 <div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="visualisering-af-trends.html#cb515-1" tabindex="-1"></a><span class="fu">library</span>(broom) </span>
-<span id="cb515-2"><a href="visualisering-af-trends.html#cb515-2" tabindex="-1"></a>my_cor_test <span class="ot">&lt;-</span> <span class="er">~</span><span class="fu">cor.test</span>(.x<span class="sc">$</span>gc,<span class="fu">log10</span>(.x<span class="sc">$</span>size_mb)) <span class="sc">%&gt;%</span> <span class="fu">glance</span>()</span></code></pre></div>
+<span id="cb515-2"><a href="visualisering-af-trends.html#cb515-2" tabindex="-1"></a>my_cor_test <span class="ot">&lt;-</span> <span class="er">~</span><span class="fu">cor.test</span>(.x<span class="sc">$</span>gc,<span class="fu">log10</span>(.x<span class="sc">$</span>size_mb)) <span class="sc">%&gt;%</span> broom<span class="sc">::</span><span class="fu">glance</span>()</span></code></pre></div>
 <p><strong>Trin 3: Brug map() på det nestede datasæt</strong></p>
 <p>Nu lad os køre vores funktion på det nestede dataframe. Vi bruger <code>map()</code> til at anvende funktionen <code>my_cor_test</code> på hvert af de fem datasæt. Det gøres ved at bruge funktionen <code>map()</code> indenfor funktionen <code>mutate()</code> til at oprette en ny kolonne, der hedder <code>test_stats</code>, hvor resultaterne fra hver af de fem tests gemmes.</p>
 <div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="visualisering-af-trends.html#cb516-1" tabindex="-1"></a>eukaryotes_cor <span class="ot">&lt;-</span> eukaryotes_nest <span class="sc">%&gt;%</span> </span>
@@ -749,8 +750,8 @@ FALSE 1   -0.147     -15.7 8.25e-55     11118   -0.165    -0.129 Pearson&#39;…
 <p>På denne måde kan man fange trends, som ikke nødvendigvis er lineære - men bemærk, at det er mere ligetil at beskrive og fortolke en lineær trend (og beregne forudsigelser ud fra en lineær trend).</p>
 </div>
 </div>
-<div id="plot-linear-regresion-estimates" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> Plot linear regresion estimates<a href="visualisering-af-trends.html#plot-linear-regresion-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="plot-linear-regression-estimates" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Plot linear regression estimates<a href="visualisering-af-trends.html#plot-linear-regression-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For at finde vores estimates og tjekke signifikansen af en lineær trend, arbejder vi direkte med den lineære model funktion <code>lm()</code>:</p>
 <div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="visualisering-af-trends.html#cb535-1" tabindex="-1"></a>my_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g<span class="sc">~</span>bill_length_mm,<span class="at">data=</span>penguins)</span>
 <span id="cb535-2"><a href="visualisering-af-trends.html#cb535-2" tabindex="-1"></a><span class="fu">summary</span>(my_lm)</span></code></pre></div>
@@ -992,8 +993,62 @@ FALSE 3 Chinstrap r^2 = 0.26, p-værdi = 7.5e-06</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-544-1.png" width="768" /></p>
 </div>
 </div>
-<div id="problemstillinger-7" class="section level2 hasAnchor" number="8.6">
-<h2><span class="header-section-number">8.6</span> Problemstillinger<a href="visualisering-af-trends.html#problemstillinger-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="resource" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Resource<a href="visualisering-af-trends.html#resource" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="32%" />
+<col width="17%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Input til <code>.x</code> i <code>map(.x, .f)</code></th>
+<th>Hvad <code>.x</code> er inde i funktionen</th>
+<th>Output fra <code>map()</code></th>
+<th>Eksempel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Atomisk vektor (numeric/character/logical)</td>
+<td>Ét enkelt element fra vektoren</td>
+<td>Liste med samme længde som input</td>
+<td><code>map(1:3, ~ .x^2)</code></td>
+</tr>
+<tr class="even">
+<td>Liste</td>
+<td>Ét liste-element (kan være vektor, df, model, osv.)</td>
+<td>Liste med samme længde som input</td>
+<td><code>map(list(1:2, 10:12), mean)</code></td>
+</tr>
+<tr class="odd">
+<td>Data frame / tibble</td>
+<td>Én kolonne ad gangen (data frames er lister af kolonner/variable)</td>
+<td>Liste med én entry pr. kolonne</td>
+<td><code>map(mtcars, mean)</code></td>
+</tr>
+<tr class="even">
+<td>Liste af data frames</td>
+<td>Ét data frame ad gangen</td>
+<td>Liste med samme længde som input-listen</td>
+<td><code>map(list(mtcars[1:3,], mtcars[4:6,]), nrow)</code></td>
+</tr>
+<tr class="odd">
+<td>Nested tibble med en liste-kolonne fra <code>nest()</code> (fx kolonnen <code>data</code>)</td>
+<td>Ét gruppe-opdelt data frame ad gangen (ét element i liste-kolonnen)</td>
+<td>Liste-kolonne med én entry pr. gruppe</td>
+<td><code>nested %&gt;% mutate(n = map(data, nrow))</code></td>
+</tr>
+</tbody>
+</table>
+<div class="pin">
+<p>OBS i denne Kapital beskæftiger vi os meget med den sidste linje i tabellen (Nested tibble med en liste-kolonne)</p>
+</div>
+</div>
+<div id="problemstillinger-7" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Problemstillinger<a href="visualisering-af-trends.html#problemstillinger-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Problem 1</strong>) Quizzen på Absalon.</p>
 <hr />
 <p>Husk at have indlæste følgende:</p>
@@ -1004,7 +1059,7 @@ FALSE 3 Chinstrap r^2 = 0.26, p-værdi = 7.5e-06</code></pre>
 <span id="cb565-5"><a href="visualisering-af-trends.html#cb565-5" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code></pre></div>
 <p><strong>Problem 2</strong>) <em>Grundlæggende korrelationsøvelse</em></p>
 <ul>
-<li><p>Brug <code>data(mtcars)</code> og <code>cor.test()</code> til at udføre en test af korrelationen mellem variablerne <code>qsec</code> og <code>drat</code>.</p></li>
+<li><p>Brug <code>data(mtcars)</code> og <code>cor.test()</code> til at udføre en test af korrelationen mellem variablerne <code>qsec</code> og <code>drat</code> (OBS: uden <code>group_by()</code> og <code>nest()</code> her).</p></li>
 <li><p>Tip: Hvis du foretrækker at undgå brugen af <code>$</code> til at specificere en kolonne indenfor <code>cor.test()</code>, kan du bruge <code>mtcars %&gt;% pull(qsec)</code> i stedet for <code>mtcars$qsec</code>.</p></li>
 <li><p>Tilføj funktionen <code>glance()</code> til dit resultat fra <code>cor.test()</code> for at se statistikkerne i
 <strong>tidy</strong> form (installer pakken <code>broom</code> hvis det er nødvendigt). Kan du genkende statistikkerne fra <code>cor.test()</code> i den resulterende dataramme?</p></li>
@@ -1049,7 +1104,7 @@ FALSE 3 Chinstrap r^2 = 0.26, p-værdi = 7.5e-06</code></pre>
 ## $ Caesarean &lt;chr&gt; &quot;no&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;no&quot;, &quot;no&quot;…</code></pre>
 <ul>
 <li><p>Anvend <code>lm()</code> med <code>LungCap</code> som den afhængige variabel og <code>Age</code> som den uafhængige variabel.</p></li>
-<li><p>Hvad er skæringstidspunktet og hældningen af den beregnede linje?</p></li>
+<li><p>Hvad er skæringspunktet og hældningen af den beregnede linje?</p></li>
 <li><p>Prøv at tilføje funktionen <code>glance()</code> til din <code>lm</code> funktion og angiv værdierne for <code>r.squared</code> og <code>p.value</code>.</p></li>
 </ul>
 <hr />
@@ -1089,8 +1144,8 @@ FALSE 3 Chinstrap r^2 = 0.26, p-værdi = 7.5e-06</code></pre>
 <p><strong>c</strong>) Lav et plot med dine resultater.</p>
 <p><strong>d</strong>) Tilføj signifikans annotations på plottet med funktionen <code>geom_signif()</code> (tilpas gerne kode fra kursusnotaterne).</p>
 </div>
-<div id="ekstra" class="section level2 hasAnchor" number="8.7">
-<h2><span class="header-section-number">8.7</span> Ekstra<a href="visualisering-af-trends.html#ekstra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ekstra" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> Ekstra<a href="visualisering-af-trends.html#ekstra" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://www.tidymodels.org/learn/statistics/tidy-analysis/" class="uri">https://www.tidymodels.org/learn/statistics/tidy-analysis/</a></p>
 
 </div>

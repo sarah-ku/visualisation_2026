@@ -187,10 +187,11 @@ lineære-trends
 geom_smooth-lm-trendlinjer
 geom_smooth-flere-lm-trendlinjer-på-samme-plot
 trendlinjer-med-methodloess
-plot-linear-regresion-estimates
+plot-linear-regression-estimates
 anvendelse-af-lm-over-nestede-datasæt
 funktionen-glue-til-at-tilføje-etiketter
 multipel-regression-og-model-sammenligning
 anova-til-at-sammenligne-de-forskellige-modeller
+resource
 problemstillinger-7
 ekstra

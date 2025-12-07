@@ -416,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.3" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#geom_smooth-flere-lm-trendlinjer-p%C3%A5-samme-plot"><i class="fa fa-check"></i><b>8.3.3</b> <code>geom_smooth()</code>: flere <code>lm</code> trendlinjer på samme plot</a></li>
 <li class="chapter" data-level="8.3.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#trendlinjer-med-methodloess"><i class="fa fa-check"></i><b>8.3.4</b> Trendlinjer med <code>method=="loess"</code></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#plot-linear-regresion-estimates"><i class="fa fa-check"></i><b>8.4</b> Plot linear regresion estimates</a>
+<li class="chapter" data-level="8.4" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#plot-linear-regression-estimates"><i class="fa fa-check"></i><b>8.4</b> Plot linear regression estimates</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#anvendelse-af-lm-over-nestede-datas%C3%A6t"><i class="fa fa-check"></i><b>8.4.1</b> Anvendelse af <code>lm()</code> over nestede datasæt</a></li>
 <li class="chapter" data-level="8.4.2" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#funktionen-glue-til-at-tilf%C3%B8je-etiketter"><i class="fa fa-check"></i><b>8.4.2</b> Funktionen <code>glue()</code> til at tilføje etiketter</a></li>
@@ -425,8 +425,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.5.1" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#anova-til-at-sammenligne-de-forskellige-modeller"><i class="fa fa-check"></i><b>8.5.1</b> <code>anova</code> til at sammenligne de forskellige modeller</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#problemstillinger-7"><i class="fa fa-check"></i><b>8.6</b> Problemstillinger</a></li>
-<li class="chapter" data-level="8.7" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#ekstra"><i class="fa fa-check"></i><b>8.7</b> Ekstra</a></li>
+<li class="chapter" data-level="8.6" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#resource"><i class="fa fa-check"></i><b>8.6</b> Resource</a></li>
+<li class="chapter" data-level="8.7" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#problemstillinger-7"><i class="fa fa-check"></i><b>8.7</b> Problemstillinger</a></li>
+<li class="chapter" data-level="8.8" data-path="visualisering-af-trends.html"><a href="visualisering-af-trends.html#ekstra"><i class="fa fa-check"></i><b>8.8</b> Ekstra</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
@@ -881,20 +882,21 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <p>Man kan nemt lave sin egne ‘fake’ data ved at simulere det fra en fordeling, der typisk er normalfordelingen, da den er den mest almindelige fordeling i den virkelige verden (husk den klassiske klokkeform). I R kan man anvender funktionen <code>rnorm</code> til at simulere data. Først angiver man antallet af observationer, og derefter den gennemsnitlige værdi og standardafvigelsen (sd), som er de to nødvendige parametre for at beskrive en normalfordeling.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="baser.html#cb67-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="co">#standard normalfordeling</span></span>
 <span id="cb67-2"><a href="baser.html#cb67-2" tabindex="-1"></a>x <span class="co">#så har vi 25 værdier fra en normal distribution med mean = 0 og standard deviation = 1</span></span></code></pre></div>
-<pre><code>##  [1] -0.37384075 -0.16749356  0.37806395 -0.26963996  0.97018032 -0.38590097
-##  [7]  1.98552360  1.29016793  0.96295116  1.44813079  0.07956527  1.79155225
-## [13] -0.47227665  0.39358688  0.28110415  0.43599207 -1.03116688  1.19510877
-## [19] -1.93514891 -0.63421542 -0.48183305  0.54469258  0.05435391  0.59799645
-## [25] -0.96598632</code></pre>
+<pre><code>##  [1]  0.005652339 -0.378144623  2.195051510  1.161695088 -0.361879681
+##  [6]  0.141174200 -1.955043457  0.749455803  0.778736284 -0.595284235
+## [11]  0.630654744 -0.332968035  0.216087014 -0.343035552 -0.603767313
+## [16]  1.178166201  0.185231339  0.261713321 -0.080117136 -2.233584206
+## [21]  0.773292818 -0.504815928 -0.302646901 -1.038897002  0.324917417</code></pre>
 <p>I stedet for at kigge på alle værdier på én gang, vil vi måske kun kigge på de første (eller sidste) værdier:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="baser.html#cb69-1" tabindex="-1"></a><span class="fu">head</span>(x) <span class="co">#første 6</span></span>
-<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1] -0.3738408 -0.1674936  0.3780640 -0.2696400  0.9701803 -0.3859010</span></span>
-<span id="cb69-3"><a href="baser.html#cb69-3" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
-<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="do">## [1] -0.63421542 -0.48183305  0.54469258  0.05435391  0.59799645 -0.96598632</span></span>
-<span id="cb69-5"><a href="baser.html#cb69-5" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
-<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a><span class="do">## [1] -0.3738408</span></span>
-<span id="cb69-7"><a href="baser.html#cb69-7" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
-<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a><span class="do">## [1] -0.9659863</span></span></code></pre></div>
+<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1]  0.005652339 -0.378144623  2.195051510  1.161695088 -0.361879681</span></span>
+<span id="cb69-3"><a href="baser.html#cb69-3" tabindex="-1"></a><span class="do">## [6]  0.141174200</span></span>
+<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
+<span id="cb69-5"><a href="baser.html#cb69-5" tabindex="-1"></a><span class="do">## [1] -2.2335842  0.7732928 -0.5048159 -0.3026469 -1.0388970  0.3249174</span></span>
+<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
+<span id="cb69-7"><a href="baser.html#cb69-7" tabindex="-1"></a><span class="do">## [1] 0.005652339</span></span>
+<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
+<span id="cb69-9"><a href="baser.html#cb69-9" tabindex="-1"></a><span class="do">## [1] 0.3249174</span></span></code></pre></div>
 <p>Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en ‘1’-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.</p>
 </div>
 <div id="measures-of-central-tendency" class="section level3 hasAnchor" number="1.10.2">
@@ -945,11 +947,12 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <span id="cb70-5"><a href="baser.html#cb70-5" tabindex="-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb70-6"><a href="baser.html#cb70-6" tabindex="-1"></a>my_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
 <span id="cb70-7"><a href="baser.html#cb70-7" tabindex="-1"></a><span class="fu">c</span>(my_mean,my_median,my_max,my_min,my_var,my_sd) <span class="co">#print results</span></span></code></pre></div>
-<pre><code>## [1]  0.2276587  0.2811041  1.9855236 -1.9351489  0.8805547  0.9383788</code></pre>
+<pre><code>## [1] -0.005134240  0.005652339  2.195051510 -2.233584206  0.894112463
+## [6]  0.945575202</code></pre>
 <p>Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="baser.html#cb72-1" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## -1.9351 -0.3859  0.2811  0.2277  0.9630  1.9855</code></pre>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## -2.233584 -0.378145  0.005652 -0.005134  0.630655  2.195052</code></pre>
 </div>
 <div id="tapply" class="section level3 hasAnchor" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> <code>tapply()</code><a href="baser.html#tapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>

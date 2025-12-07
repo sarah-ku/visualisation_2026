@@ -72,7 +72,7 @@ embed_url("https://vimeo.com/709225323")  #2022
 
 * Video 2: Lineær regression linjer med ggplot2
   + Jeg viser hvordan man tilføjer regression linjer på et plot
-  + Jeg sammenligne linjen med resultatet fra `lm()`
+  + Jeg sammenligner linjen med resultatet fra `lm()`
 
 ```{r,echo=FALSE}
 #library("vembedr")
@@ -85,7 +85,7 @@ embed_url("https://vimeo.com/709225203") #2022
 ---
 
 * Video 3: Lineær regression med `nest()` og `map()`
-  + Den proces igen fra Video 1 men anvendte på lineær regression
+  + Den process igen fra Video 1 men anvendte på lineær regression
 
 ```{r,echo=FALSE}
 #library("vembedr")
@@ -211,7 +211,7 @@ Vi vil gerne få statistikkerne fra `cor.test()` i en pæn form, så vi tilføje
 
 ```{r}
 library(broom) 
-my_cor_test <- ~cor.test(.x$gc,log10(.x$size_mb)) %>% glance()
+my_cor_test <- ~cor.test(.x$gc,log10(.x$size_mb)) %>% broom::glance()
 ```
 
 
@@ -340,7 +340,7 @@ ggplot(penguins,aes(x=bill_length_mm,y=body_mass_g,colour=species)) +
 
 På denne måde kan man fange trends, som ikke nødvendigvis er lineære - men bemærk, at det er mere ligetil at beskrive og fortolke en lineær trend (og beregne forudsigelser ud fra en lineær trend).
 
-## Plot linear regresion estimates
+## Plot linear regression estimates
 
 For at finde vores estimates og tjekke signifikansen af en lineær trend, arbejder vi direkte med den lineære model funktion `lm()`:
 
@@ -564,6 +564,20 @@ stats_plot +
               annotations="***", y_position = 0.55, tip_length = 0.03)
 ```
 
+## Resource
+
+| Input til `.x` i `map(.x, .f)`                                       | Hvad `.x` er inde i funktionen | Output fra `map()`                      | Eksempel                                 |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------------- | --------------------------------------------- |
+| Atomisk vektor (numeric/character/logical)                           | Ét enkelt element fra vektoren                                           | Liste med samme længde som input        | `map(1:3, ~ .x^2)`                            |
+| Liste                                                                | Ét liste-element (kan være vektor, df, model, osv.)                      | Liste med samme længde som input        | `map(list(1:2, 10:12), mean)`                 |
+| Data frame / tibble                                                  | Én kolonne ad gangen (data frames er lister af kolonner/variable)        | Liste med én entry pr. kolonne          | `map(mtcars, mean)`                           |
+| Liste af data frames                                                 | Ét data frame ad gangen                                                  | Liste med samme længde som input-listen | `map(list(mtcars[1:3,], mtcars[4:6,]), nrow)` |
+| Nested tibble med en liste-kolonne fra `nest()` (fx kolonnen `data`) | Ét gruppe-opdelt data frame ad gangen (ét element i liste-kolonnen)      | Liste-kolonne med én entry pr. gruppe   | `nested %>% mutate(n = map(data, nrow))`      |
+
+:::pin
+OBS i denne Kapital beskæftiger vi os meget med den sidste linje i tabellen (Nested tibble med en liste-kolonne)
+:::
+
 ## Problemstillinger
 
 __Problem 1__) Quizzen på Absalon.
@@ -583,7 +597,7 @@ data(iris)
 
 __Problem 2__) *Grundlæggende korrelationsøvelse*
 
-* Brug `data(mtcars)` og `cor.test()` til at udføre en test af korrelationen mellem variablerne `qsec` og `drat`. 
+* Brug `data(mtcars)` og `cor.test()` til at udføre en test af korrelationen mellem variablerne `qsec` og `drat` (OBS: uden `group_by()` og `nest()` her). 
 
 ```{r,echo=FALSE,eval=FALSE}
 cor.test(mtcars %>% pull(qsec),mtcars %>% pull(drat)) 
@@ -676,7 +690,7 @@ glimpse(LungCapData) #se variabelnavne
 lm(LungCap ~ Age, data = LungCapData)
 ```
 
-* Hvad er skæringstidspunktet og hældningen af den beregnede linje?
+* Hvad er skæringspunktet og hældningen af den beregnede linje?
 * Prøv at tilføje funktionen `glance()` til din `lm` funktion og angiv værdierne for `r.squared` og `p.value`.
 
 ```{r,echo=FALSE,eval=FALSE}
