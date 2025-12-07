@@ -27,14 +27,18 @@ eukaryotes <- read_tsv("https://www.dropbox.com/s/3u4nuj039itzg8l/eukaryotes.tsv
 
 ## Indledning
 
-### Læringsmål
+I dette kapitel bygger vi videre på idéen om "nested data": Vi opdeler et datasæt i grupper, samler hver gruppe i en liste-kolonne med functionen `nest()`, og bruger `map()`-funktioner til at køre den samme statistiske analyse på hver gruppe. Målet er at gøre analyserne **reproducerbare** og **skalerbare**.
+
+Vi starter med korrelation (`cor.test()`) og går videre til lineær regression (`lm()`) og visualisering af trends med `geom_smooth()`. Undervejs bruger vi `broom`-pakken til at omforme model- og testoutput til tidy tibbles, så resultater nemt kan sammenlignes og plottes. Kapitlet afsluttes med multipel regression og model-sammenligning med `anova()`, samt et eksempel på at omsætte p-værdier til figur-annotationer.
 
 :::goals
 Du skal være i stand til at
 
-* Anvende `nest()` og `map()` strukturen til at gentage en korrelationsanalyse over flere forskellige datasæt.
-* Bruge `ggplot` funktionen `geom_smooth()` til at visualisere lineær regression eller loess-kurver.
-* Kombinere `map()`/`nest()` og `lm()` til at beregne regressionsstatistikker for flere lineære regressionsmodeller på samme tid og sammenligne dem med `anova()`.
+* Anvende `nest()` til at samle deldatasæt i en liste-kolonne og derefter bruge `map` til at gentage en bestemt analyse på tværs af flere deldatasæt uden at copy/paste koder.
+* Bruge funktionen `geom_smooth()` til at visualisere lineær regression eller loess-kurver.
+* Omdanne output fra statistiske tests og modeller til tidy tibbles med `broom`-pakken (fx `glance()` og `tidy()`)
+* bruge anova() til at sammenligne indlejrede (nested) modeller, der er fit’et på samme datasæt.
+* (valgfrit) tilføje modelstatistikker og signifikans-annotationer til figurer med `glue`-pakken og `ggsignif()`.
 :::
 
 
@@ -45,9 +49,7 @@ Du skal være i stand til at
 :::
 
 
-### Introduktion til kapitlet
 
-I dette kapitel viser jeg flere eksempler på processen, hvor man anvender `group_by()` og `nest()` og dernæst `map()`-funktioner for at lave reproducerbare statistiske analyser. Vi fokuserer på eksempler med korrelationsanalyse og lineære regressionsmodeller, men den overordnede ramme kan anvendes i mange forskellige kontekster.
 
 ### Videoressourcer
 

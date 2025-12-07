@@ -179,8 +179,6 @@ problemstillinger-6
 ekstra-notater
 visualisering-af-trends
 indledning
-læringsmål
-introduktion-til-kapitlet
 videoressourcer
 nest-og-map-eksempel-med-korrelation
 korrelation-over-flere-datasæt-på-en-gang
