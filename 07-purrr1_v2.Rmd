@@ -205,7 +205,7 @@ Dette er en kort oversigt over de forskellige `map`-funktioner i R og hvilken ty
 | `map_int()` | **integer-vektor**     | Heltal, fx antal karakterer pr. streng.                                        |
 | `map_dbl()` | **double-vektor**      | Numeriske resultater med decimaler (gennemsnit, sum, SD).                      |
 | `map_chr()` | **karaktervektor**     | Tekstoutput, fx udtræk af navne eller labels.                                  |
-| `map_df()`  | **data frame / tibble**| Binder liste-output sammen kolonne for kolonne (som `dplyr::bind_rows()`).     |
+| `map_df()`  | **data frame/tibble**| Binder liste-output sammen kolonne for kolonne (som `dplyr::bind_rows()`).     |
 
 
 :::tip
@@ -327,7 +327,7 @@ iris %>%
 
 
 :::pin
-**Som du kan se, er der flere måder at skrive en “custom function” til `map()`-familien**
+**Som du kan se, er der flere måder at skrive en "custom function" til `map()`-familien**
 
 1. **Navngiven funktion**  
 
@@ -348,7 +348,7 @@ my_fun <- function(x) (x - mean(x))^2
 map_df(my_fun)
 ```
 
-4. **Lambda-operatoren \(…) (R ≥ 4.1)**
+4. **Lambda-operatoren \(…) (R >= 4.1)**
 
 ```r
 map_df(\(x) mean(x, na.rm = TRUE))

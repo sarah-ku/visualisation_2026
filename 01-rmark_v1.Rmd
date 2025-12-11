@@ -1,4 +1,5 @@
 
+
 # Introduktion til R Markdown {#rmarkdown}
 
 ```{r, echo=FALSE,fig.width = 1,fig.height=1,out.height="20%",out.width="20%"}

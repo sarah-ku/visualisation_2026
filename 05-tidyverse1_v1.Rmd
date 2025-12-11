@@ -1,4 +1,5 @@
 
+
 # Bearbejdning - tidyverse dag 1 {#data}
 
 ```{r, echo=FALSE,fig.width = 1,fig.height=1,comment=FALSE,warning=FALSE,out.width="15%"}

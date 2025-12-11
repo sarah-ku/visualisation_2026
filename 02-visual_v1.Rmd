@@ -1,4 +1,5 @@
 
+
 # Visualisering - ggplot2 dag 1 {#visual1}
 
 ```{r, echo=FALSE,out.height="25%",out.width="25%"}
