@@ -23,7 +23,7 @@
 <meta name="author" content="Sarah Rennie" />
 
 
-<meta name="date" content="2025-12-11" />
+<meta name="date" content="2025-12-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -460,6 +460,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4.3" data-path="clustering.html"><a href="clustering.html#afpr%C3%B8ve-andre-metoder-p%C3%A5-hierachical-clustering"><i class="fa fa-check"></i><b>9.4.3</b> Afprøve andre metoder på hierachical clustering</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="clustering.html"><a href="clustering.html#problemstillinger-8"><i class="fa fa-check"></i><b>9.5</b> Problemstillinger</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html"><i class="fa fa-check"></i><b>10</b> Principal component analysis (PCA)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#indledning-og-l%C3%A6ringsm%C3%A5lene"><i class="fa fa-check"></i><b>10.1</b> Indledning og læringsmålene</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#l%C3%A6ringsm%C3%A5lene-1"><i class="fa fa-check"></i><b>10.1.1</b> Læringsmålene</a></li>
+<li class="chapter" data-level="10.1.2" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#introduktion-til-kapitlet"><i class="fa fa-check"></i><b>10.1.2</b> Introduktion til kapitlet</a></li>
+<li class="chapter" data-level="10.1.3" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#videoressourcer-1"><i class="fa fa-check"></i><b>10.1.3</b> Videoressourcer</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#hvad-er-principal-component-analysis-pca"><i class="fa fa-check"></i><b>10.2</b> Hvad er principal component analysis (PCA)?</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#problemet-med-h%C3%B8j-dimensionelle-plots"><i class="fa fa-check"></i><b>10.2.1</b> Problemet med høj-dimensionelle plots</a></li>
+<li class="chapter" data-level="10.2.2" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#id%C3%A9en-bag-pca-projektion-p%C3%A5-nye-akser"><i class="fa fa-check"></i><b>10.2.2</b> Idéen bag PCA: Projektion på nye akser</a></li>
+<li class="chapter" data-level="10.2.3" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#simpelt-eksempel-med-to-dimensioner"><i class="fa fa-check"></i><b>10.2.3</b> Simpelt eksempel med to dimensioner</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#fit-pca-to-data-in-r-med-prcomp"><i class="fa fa-check"></i><b>10.3</b> Fit PCA to data in R med <code>prcomp()</code></a></li>
+<li class="chapter" data-level="10.4" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#integrering-af-pca-resultater-med-broom-pakken"><i class="fa fa-check"></i><b>10.4</b> Integrering af PCA-resultater med broom-pakken</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#lave-plot-af-principal-componenets"><i class="fa fa-check"></i><b>10.4.1</b> Lave plot af principal componenets</a></li>
+<li class="chapter" data-level="10.4.2" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#forklarede-variance"><i class="fa fa-check"></i><b>10.4.2</b> Forklarede variance</a></li>
+<li class="chapter" data-level="10.4.3" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#rotationsmatrix-bidragene-fra-de-forskellige-variabler"><i class="fa fa-check"></i><b>10.4.3</b> Rotationsmatrix: bidragene fra de forskellige variabler</a></li>
+<li class="chapter" data-level="10.4.4" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#pakken-factoextra"><i class="fa fa-check"></i><b>10.4.4</b> Pakken <code>factoextra</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#problemstillinger-9"><i class="fa fa-check"></i><b>10.5</b> Problemstillinger</a></li>
+<li class="chapter" data-level="10.6" data-path="principal-component-analysis-pca.html"><a href="principal-component-analysis-pca.html#ekstra-l%C3%A6sning"><i class="fa fa-check"></i><b>10.6</b> Ekstra læsning</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://sarah-ku.github.io/Visualisering_2026" target="blank">Published with bookdown</a></li>
@@ -914,20 +939,20 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <p>Man kan nemt lave sin egne ‘fake’ data ved at simulere det fra en fordeling, der typisk er normalfordelingen, da den er den mest almindelige fordeling i den virkelige verden (husk den klassiske klokkeform). I R kan man anvender funktionen <code>rnorm</code> til at simulere data. Først angiver man antallet af observationer, og derefter den gennemsnitlige værdi og standardafvigelsen (sd), som er de to nødvendige parametre for at beskrive en normalfordeling.</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="baser.html#cb67-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>) <span class="co">#standard normalfordeling</span></span>
 <span id="cb67-2"><a href="baser.html#cb67-2" tabindex="-1"></a>x <span class="co">#så har vi 25 værdier fra en normal distribution med mean = 0 og standard deviation = 1</span></span></code></pre></div>
-<pre><code>##  [1] -0.12948381 -0.83353692  0.28439729  0.85450636 -0.53504522  1.32701142
-##  [7]  0.06651933 -0.55720306 -0.07895535 -2.29175360  0.81811719 -1.74165244
-## [13] -0.39467204  0.76870297  0.67865861  1.03412380  1.49268787 -0.52213538
-## [19]  0.72094562  0.04723131 -1.75070443  0.90368030 -1.42777508 -0.22589213
-## [25]  1.58380886</code></pre>
+<pre><code>##  [1] -1.26259321  1.03604350 -0.24083737 -0.71147387  1.17265243  0.57736405
+##  [7] -1.78858624  1.35838366  4.77780328 -0.84746609  1.97716756  2.17180024
+## [13]  1.55851236 -0.01483794  1.34326749 -1.04440099  0.45133505 -0.35687889
+## [19]  0.71587272  1.13024961  0.32939008  0.54742019 -0.49036921  1.46669631
+## [25] -0.64821683</code></pre>
 <p>I stedet for at kigge på alle værdier på én gang, vil vi måske kun kigge på de første (eller sidste) værdier:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="baser.html#cb69-1" tabindex="-1"></a><span class="fu">head</span>(x) <span class="co">#første 6</span></span>
-<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1] -0.1294838 -0.8335369  0.2843973  0.8545064 -0.5350452  1.3270114</span></span>
+<span id="cb69-2"><a href="baser.html#cb69-2" tabindex="-1"></a><span class="do">## [1] -1.2625932  1.0360435 -0.2408374 -0.7114739  1.1726524  0.5773640</span></span>
 <span id="cb69-3"><a href="baser.html#cb69-3" tabindex="-1"></a><span class="fu">tail</span>(x) <span class="co">#sidste 6</span></span>
-<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="do">## [1]  0.04723131 -1.75070443  0.90368030 -1.42777508 -0.22589213  1.58380886</span></span>
+<span id="cb69-4"><a href="baser.html#cb69-4" tabindex="-1"></a><span class="do">## [1]  1.1302496  0.3293901  0.5474202 -0.4903692  1.4666963 -0.6482168</span></span>
 <span id="cb69-5"><a href="baser.html#cb69-5" tabindex="-1"></a>x[<span class="dv">1</span>] <span class="co">#første værdi</span></span>
-<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a><span class="do">## [1] -0.1294838</span></span>
+<span id="cb69-6"><a href="baser.html#cb69-6" tabindex="-1"></a><span class="do">## [1] -1.262593</span></span>
 <span id="cb69-7"><a href="baser.html#cb69-7" tabindex="-1"></a>x[<span class="fu">length</span>(x)] <span class="co">#sidste data point</span></span>
-<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a><span class="do">## [1] 1.583809</span></span></code></pre></div>
+<span id="cb69-8"><a href="baser.html#cb69-8" tabindex="-1"></a><span class="do">## [1] -0.6482168</span></span></code></pre></div>
 <p>Bemærk, at i modsætning til Python og mange andre programmeringssprog, bruger R en ‘1’-baseret indeksering. Det betyder, at den første værdi er x[1] og ikke x[0] som i Python.</p>
 </div>
 <div id="measures-of-central-tendency" class="section level3 hasAnchor" number="1.10.2">
@@ -978,12 +1003,11 @@ Figure 1.1: Image source: <a href="https://epirhandbook.com/en/r-basics.html" cl
 <span id="cb70-5"><a href="baser.html#cb70-5" tabindex="-1"></a>my_var <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb70-6"><a href="baser.html#cb70-6" tabindex="-1"></a>my_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
 <span id="cb70-7"><a href="baser.html#cb70-7" tabindex="-1"></a><span class="fu">c</span>(my_mean,my_median,my_max,my_min,my_var,my_sd) <span class="co">#print results</span></span></code></pre></div>
-<pre><code>## [1]  0.003663259  0.047231308  1.583808863 -2.291753604  1.109352781
-## [6]  1.053258174</code></pre>
+<pre><code>## [1]  0.5283319  0.5474202  4.7778033 -1.7885862  1.9101216  1.3820715</code></pre>
 <p>Man kan også lave et summary af dataen, som består af mange af de statistiker navnt ovenpå:</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="baser.html#cb72-1" tabindex="-1"></a><span class="fu">summary</span>(x)</span></code></pre></div>
-<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
-## -2.291754 -0.535045  0.047231  0.003663  0.818117  1.583809</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -1.7886 -0.4904  0.5474  0.5283  1.3433  4.7778</code></pre>
 </div>
 <div id="tapply" class="section level3 hasAnchor" number="1.10.3">
 <h3><span class="header-section-number">1.10.3</span> <code>tapply()</code><a href="baser.html#tapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
