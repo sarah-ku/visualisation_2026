@@ -23,7 +23,7 @@
 <meta name="author" content="Sarah Rennie" />
 
 
-<meta name="date" content="2025-12-19" />
+<meta name="date" content="2026-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -693,8 +693,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb628-3"><a href="principal-component-analysis-pca.html#cb628-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb628-4"><a href="principal-component-analysis-pca.html#cb628-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
 <span id="cb628-5"><a href="principal-component-analysis-pca.html#cb628-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>,<span class="at">se=</span><span class="cn">FALSE</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula =
-## &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y
+## ~ x&#39;</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-642-1.png" width="384" /></p>
 <!-- Med andre ord kan vi næsten forklare datasættet i blot én dimension - punkternes afstand langs linjen. Når man tager alle punkterne og beskriver dem langs én linje, der bedst beskriver variansen i datasættet, kaldes denne linje for den første principal component (PC1). Man kan dernæst beskrive en anden linje, der er vinkelret på PC1, og som bedst forklarer variancen i de data, der ikke blev fanget af PC1 - dette kaldes for den anden principal component (PC2). -->
 <p>Lineær regression (<code>geom_smooth(method="lm")</code>) illustrerer, at dataene næsten kan beskrives på én linje. Den bedste linje gennem punkterne svarer til PC1, og PC2 findes som en ortogonal linje, der fanger den resterende varians. Vi kan se her PC1 og PC2 plottet:</p>
@@ -705,8 +705,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb630-3"><a href="principal-component-analysis-pca.html#cb630-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb630-4"><a href="principal-component-analysis-pca.html#cb630-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
 <span id="cb630-5"><a href="principal-component-analysis-pca.html#cb630-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula =
-## &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y
+## ~ x&#39;</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-644-1.png" width="384" /></p>
 <p>Vi kan se her, at dataene fylder pladsen på plottet bedre end før (og bemærk at akseskalaen er blevet meget mindre på den nye y-akse, da dataene spreder sig meget mindre langs PC2 i forhold til PC1.)</p>
 <p>Dette er kun et eksempel, hvor vores oprindelige data ligger i to dimensioner (to variabler), for at gøre det nemt at visualisere dem i et plot, men de fleste datasæt (fx penguins, iris osv.) har flere end to dimensioner. Vi kan godt lave den samme proces, hvor vi definerer PC1, som forklarer så meget af variansen i dataene som muligt, og dernæst PC2, som forklarer noget af variansen, der ikke blev fanget af PC1, og dernæst PC3 osv., alt efter hvor mange dimensioner dataene har. I mange praktiske situationer vælger man de første to komponenter, som er de vigtigste, da de forklarer mest af variansen i dataene i forhold til de andre komponenter.</p>
@@ -1013,7 +1013,7 @@ FALSE generated.</code></pre>
 <p>Åbn “world happiness data” og</p>
 <div class="sourceCode" id="cb651"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb651-1"><a href="principal-component-analysis-pca.html#cb651-1" tabindex="-1"></a>happiness <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://www.dropbox.com/scl/fi/6rt17anzk31mjyexm16o6/world_happiness_data.csv?rlkey=44qxe2voahqvaxnxlgy01i2ls&amp;dl=1&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 146 Columns: 7
-## ── Column specification ──────────
+## ── Column specification ───────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): Country
 ## dbl (6): GDP per capita, Social support, Healthy life expectancy, Freedom of...

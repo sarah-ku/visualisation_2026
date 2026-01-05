@@ -23,7 +23,7 @@
 <meta name="author" content="Sarah Rennie" />
 
 
-<meta name="date" content="2025-12-19" />
+<meta name="date" content="2026-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -618,7 +618,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Når man udfører en iterativ proces, gentager man typisk den samme handling flere gange. Forestil dig for eksempel, at vi har ti variabler og ønsker at beregne middelværdien for hver af dem. I dette eksempel arbejder vi med datasættet <code>eukaryotes</code>, der indeholder oplysninger om forskellige eukaryote organismer – blandt andet deres navne, grupper, undergrupper, antal proteiner/gener og genomstørrelse. Du kan indlæse dataene med kommandoen nedenfor og bagefter se en liste over alle kolonnenavnene.</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="functional-programming-med-purrr-pakken.html#cb383-1" tabindex="-1"></a>eukaryotes <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">&quot;https://www.dropbox.com/s/3u4nuj039itzg8l/eukaryotes.tsv?dl=1&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 11508 Columns: 19
-## ── Column specification ──────────
+## ── Column specification ───────────
 ## Delimiter: &quot;\t&quot;
 ## chr  (10): organism_name, bioproject_accession, group, subgroup, assembly_ac...
 ## dbl   (7): taxid, bioproject_id, size_mb, gc, scaffolds, genes, proteins
@@ -1262,8 +1262,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="functional-programming-med-purrr-pakken.html#cb464-1" tabindex="-1"></a>eukaryotes_stats_with_plots <span class="sc">%&gt;%</span> </span>
 <span id="cb464-2"><a href="functional-programming-med-purrr-pakken.html#cb464-2" tabindex="-1"></a>  <span class="fu">pluck</span>(<span class="st">&quot;myplots&quot;</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 613 rows containing
-## non-finite outside the scale
-## range (`stat_density()`).</code></pre>
+## non-finite outside the scale range
+## (`stat_density()`).</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-450-1.png" width="384" /></p>
 <p>Denne fremgangsmåde holder alle delresultater – de rå data, de afledte værdier og selve plot-objekterne – samlet i én overskuelig tibble. Det gør workflowet reproducérbart og skalerbart, især når man analyserer mange biologiske grupper eller prøver.</p>
 </div>
